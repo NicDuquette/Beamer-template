@@ -1,0 +1,548 @@
+%!TEX encoding = UTF-8 Unicode
+
+% Hack to generate two versions of the document.
+% Light-on-dark version with overlays for class; 
+% Dark-on-light handout version for possible printing.
+% https://tex.stackexchange.com/questions/1492/passing-parameters-to-a-document
+%\def\ishandout{1}
+%\PassOptionsToPackage{draft}{graphicx}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                            IF IT'S A HANDOOUT, FORMAT THIS WAY                       % 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifdefined\ishandout
+  \documentclass[aspectratio=169,handout]{beamer}
+  
+\input{preamble_handout}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                        BUT IF IT'S FOR THE CLASSROOM, DO THIS                        % 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\else
+  \documentclass[aspectratio=169]{beamer}
+
+\input{preamble_classroom}
+
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                       AND THIS PREAMBLE GETS USED IN EITHER CASE                     % 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\input{preamble_general}
+
+							%%%%%%%%%%%%%%%%%%%%%%
+							% DEFINE TITLE SLIDE %
+							%%%%%%%%%%%%%%%%%%%%%%
+\title{Beamer Template}
+\author{Nic Duquette}
+\institute{USC Price}
+\date{PPD XXX | Lecture X}
+
+						
+
+
+							%%%%%%%%%%%%%%%%%%
+							% START DOCUMENT %
+							%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+	
+
+	% =====================  FRAME  =====================
+	% Title Slide
+\begin{frame}
+    \begin{center}
+     	\usebeamerfont{title}\Huge\inserttitle\par
+%      \usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par
+\vspace{2em}
+      
+      \usebeamerfont{author}\Large\insertauthor\par
+      \usebeamerfont{institute}\Large\insertinstitute\par
+            \bigskip
+      \usebeamerfont{date}\Large\insertdate\par
+%      \usebeamercolor[fg]{titlegraphic}\inserttitlegraphic
+    \end{center}
+\end{frame}
+	% ====================  END FRAME  ==================
+	
+
+
+	% =====================  FRAME  =====================
+	% Table of Contents
+	% https://tex.stackexchange.com/questions/69720/latex-beamer-toc-dont-display-bubbles
+\setbeamertemplate{section in toc}{\inserttocsectionnumber.~\inserttocsection}
+\begin{frame}
+	\frametitle{Today's Topics}
+	\Large\tableofcontents
+\end{frame}
+	% ====================  END FRAME  ==================
+
+
+
+
+
+
+	% =====================  SECTION  ===================
+	% Section
+\sectionframe{Basic Slides Stuff}
+	% =====================  SECTION  ===================
+	
+
+	% =====================  FRAME  =====================
+	% Notes go here
+\begin{frame}
+	\frametitle{A basic frame}
+	\begin{witem}
+		\item Most slides are words on a screen
+		\item These slides use Paul Goldsmith-Pinkham's wide-itemize to space the words out.
+		\item Try not to squeeze words in
+		\item Too many words are bad
+	\end{witem}
+\end{frame}
+	% ====================  END FRAME  ==================
+
+
+	% =====================  FRAME  =====================
+	% Notes go here
+\begin{frame}
+	\frametitle{Other decisions}
+	\begin{witem}
+		\item Typical Beamer junk, like navigation controls, are omitted
+		\item The classroom version of the slides use a light-on-dark theme, 
+			which is kind to eyes 
+		\item The handouts use dark-on-white, to avoid wasting ink
+		\item Again following Prof.\ Goldsmith-Pinkham, slides are wide-format
+			and use sections
+	\end{witem}
+\end{frame}
+	% ====================  END FRAME  ==================
+
+
+
+
+	% =====================  FRAME  =====================
+	% Notes go here
+\begin{frame}
+	\frametitle{Overlays}
+	\begin{witemplus}
+		\item Use overlays to reveal words
+		\item Step
+		\item By step
+		\item Only the final slide will be in the handout version
+	\end{witemplus}
+\end{frame}
+	% ====================  END FRAME  ==================
+
+
+	% =====================  FRAME  =====================
+	% Notes go here
+\begin{frame}
+	\frametitle{Solution Frames}
+	\begin{witem}
+		\item Sometimes we don't want students to have the answer to 
+			in-class exercises 
+		\item \dots yet we also want them to have the handout to follow along
+		\item Can you guess what the \texttt{solutionframe} environment does?
+	\end{witem}
+\end{frame}
+	% ====================  END FRAME  ==================
+
+
+	% =====================  FRAME  =====================
+	% Notes go here
+\begin{solutionframe}
+	\frametitle{Solution Frames}
+	\begin{witem}
+		\item The \texttt{solutionframe} environment only creates a slide
+			in classroom mode
+		\item Handout mode ignores its contents and keeps going
+		\item Similarly, there is a command, \texttt{\textbackslash{}theendframe} command
+			that makes an empty slide at the end of class, but not the handout
+	\end{witem}
+\end{solutionframe}
+	% ====================  END FRAME  ==================
+
+
+
+	% =====================  FRAME  =====================
+	% Notes go here
+\begin{frame}
+	\frametitle{References}
+	\begin{witem}
+		\item Regular citation commands like \texttt{\textbackslash{}cite} will work normally
+			\begin{itemize}
+				\item \cite{DuquetteJMP} is a paper you can read if you want to
+			\end{itemize}
+		\item Sometimes we want to cite a claim, but don't want a heap of words on the slide
+		\item Command \texttt{\textbackslash{}citepx} will deemphasize a parenthetical citation
+			\begin{itemize}
+				\item Scholars are known to make claims about things \citepx{DuquetteJMP}
+			\end{itemize}
+		\item The references slide at the end of the deck is automatically puts the reference list
+			in small text and breaks up across frames as needed.
+	\end{witem}
+\end{frame}
+	% ====================  END FRAME  ==================
+
+	
+
+	% =====================  FRAME  =====================
+	% fonts
+\begin{frame}
+	\frametitle{Math}
+	\begin{witem}
+	\item The general preamble defines a variety of common operators that are tricky to 
+		code manually, such as \texttt{\textbackslash{}expect} for the expectation operator. For example,
+		
+	\item
+	 $\expect[\varepsilon_i \varepsilon_j|\mathbf{X}] = \sigma_i^2$ if $i=j$, $\sigma_{ij}$ if $i \neq j$, and
+	
+		\begin{equation*}
+		\variance[\varepsilon_i|\mathbf{X_{i}}] 
+		=\expect[\varepsilon^\prime \varepsilon | \mathbf{X_{i}}] 
+		= \boldsymbol{\Omega}
+		= \left[
+		\begin{array}{cccc}
+			\sigma_1^2 		& \sigma_{1,2}	&	\cdots 	& \sigma_{1,m} 		\\
+			\sigma_{1,2}		& \sigma_2^2 	&	\cdots 	& \sigma_{2,m} 		\\
+			\vdots			&				&	\ddots	& \vdots				\\
+			\sigma_{1,m}		& \sigma_{2,m}	&	\cdots 	& \sigma_m^2  
+		\end{array} \right]
+		\end{equation*}
+	\end{witem}
+\end{frame}
+	% ====================  END FRAME  ==================
+
+
+
+%
+%	% =====================  SECTION  ===================
+%	% Section
+%\sectionframe{Math}
+%	% =====================  SECTION  ===================
+%	
+	
+	
+
+	% =====================  SECTION  ===================
+	% Section
+\sectionframe{Code}
+	% =====================  SECTION  ===================
+	
+
+
+	% =====================  FRAME  =====================
+	% Notes go here
+\begin{frame}
+	\frametitle{Code}
+	\begin{witem}
+		\item To use code highlighting with the same color scheme as
+			the rest of the presentation, copy the style files included
+			with the template to your Pygments styles directory
+		\item See directions in the README for more detail
+		\item Code is only highlighted if the slides are compiled using the
+			options in the shell script
+		\item Otherwise, the slides default to ``draft'' mode (monospace font,
+			no color).
+	\end{witem}
+\end{frame}
+	% ====================  END FRAME  ==================
+	
+	% =====================  FRAME  =====================
+	% Notes go here
+\begin{frame}
+	\frametitle{Stata Code}
+	\begin{witem}
+		\item Individual fragments of Stata code can be
+			inserted using \texttt{\textbackslash{}stata\{}\textit{code text}\texttt{\}}
+			\begin{itemize}
+				\item \stata{regress Y X, vce(cluster id)}
+			\end{itemize}
+		\item Or, an entire frame of Stata code can be created from an external file 
+			using
+			\texttt{\textbackslash{}InsertStataFrame\{}\textit{frametitle}\texttt{\}\{}
+\textit{filepath.do}\texttt{\}}
+	\end{witem}
+\end{frame}
+	% ====================  END FRAME  ==================
+	
+	
+	
+	% =====================  FRAME  =====================
+	% Notes go here
+\InsertStataFrame{A Stata Frame}{../code/hello.do}
+	% =====================  FRAME  =====================
+
+	
+	% =====================  FRAME  =====================
+	% Notes go here
+\begin{frame}
+	\frametitle{Python Code}
+	\begin{witem}
+		\item Similarly, individual fragments of Python code can be
+			inserted using \texttt{\textbackslash{}python\{}\textit{code text}\texttt{\}}
+			\begin{itemize}
+				\item \python{print("Hello World")}
+			\end{itemize}
+		\item Or, an entire frame of Python code can be created from an external file 
+			using
+			\texttt{\textbackslash{}InsertPythonFrame\{}\textit{frametitle}\texttt{\}\{}
+\textit{filepath.py}\texttt{\}}
+	\end{witem}
+\end{frame}
+	% ====================  END FRAME  ==================
+	
+	
+
+	% =====================  FRAME  =====================
+	% Notes go here
+\InsertPythonFrame{A Python Frame}{../code/example.py}
+	% =====================  FRAME  =====================
+	
+	
+	
+	% =====================  FRAME  =====================
+	% Notes go here
+\begin{frame}
+	\frametitle{More Code}
+	\begin{witem}
+		\item Adding other languages is straightforward
+			\begin{enumerate}
+				\item Define a new minted environment
+					in both preambles for your favorite language
+				\item Copy the macros for Stata or Python and adapt them
+			\end{enumerate}
+		\item What about other tweaks? You may get frustrated.
+		\item Beamer and verbatim text (like code) often don't get along; expect bugs.
+	\end{witem}
+\end{frame}
+	% ====================  END FRAME  ==================
+	
+	
+
+
+	% =====================  SECTION  ===================
+	% Section
+\sectionframe{Tables and Figures}
+	% =====================  SECTION  ===================
+	
+	
+
+	% =====================  FRAME  =====================
+	% Latex tables
+\begin{frame}
+	\frametitle{Tables}
+	\begin{columns}[T] % align columns
+	\begin{column}{.48\textwidth}
+		\input{\tablepath/mytable.tex}
+	\end{column}%
+	\hfill%
+	\begin{column}{.48\textwidth}
+		\begin{witem}
+		\item Insert .tex tables from statistical software 
+			using \texttt{\textbackslash{}input\{\}}
+		\item \texttt{\textbackslash{}tablepath} defines the relative path to
+			the table directory
+		\item The \texttt{\\begin\{column\}} environment
+			makes it easy to put comments alongside your float
+	\end{witem}
+	\end{column}%
+	\end{columns}
+\end{frame}
+	% ====================  END FRAME  ==================
+
+
+	% =====================  FRAME  =====================
+	% Inline Images, Different by mode
+\begin{frame}
+	\frametitle{Images}
+	\begin{columns}[T] % align columns
+	\begin{column}{.48\textwidth}
+		% Source
+		\includegraphics[width=\textwidth]{\figpath/se_hetero.png}
+	\end{column}%
+	\hfill%
+	\begin{column}{.48\textwidth}
+		\begin{witem}
+		\item The macro {\textbackslash{}figpath} points to images in the
+			\texttt{figs\textunderscore{}dark} directory in classroom mode
+		\item But it points to \texttt{figs\textunderscore{}light} in handout mode
+		\item Automate this process by using the color profiles in this template
+			to create two versions of your charts
+	\end{witem}
+	\end{column}%
+	\end{columns}
+\end{frame}
+	% ====================  END FRAME  ==================
+	
+	
+	
+	% =====================  FRAME  =====================
+	% Notes go here
+\InsertStataFrame{Example of two colors code here}{../code/define_colors.do}
+	% =====================  FRAME  =====================
+
+	
+	% =====================  FRAME  =====================
+	% Inline Images, Same for both
+\begin{frame}
+	\frametitle{Images}
+	\begin{columns}[T] % align columns
+	\begin{column}{.48\textwidth}
+		% Source
+		\includegraphics[width=0.9\textwidth]{\figboth/girl_with_the_red_hat_1937.1.53.jpg}
+	\end{column}%
+	\hfill%
+	\begin{column}{.48\textwidth}
+		\begin{witem}
+		\item Sometimes you want to include an image that is the same for both versions
+			of the slides
+		\item These are stored in the \texttt{figs\textunderscore{}both} folder
+		\item Use the filepath \texttt{\textbackslash{}figboth/myimage.jpg} to load the image.
+	\end{witem}
+	\end{column}%
+	\end{columns}
+\end{frame}
+	% ====================  END FRAME  ==================
+
+
+
+	% =====================  FRAME  =====================
+	% Notes go here
+\begin{frame}
+	\frametitle{Big Images}
+	\begin{witem}
+		\item Sometimes, you don't want text next to your picture
+		\item You want a big image you can see details of
+		\item \texttt{\textbackslash{}pictureframe\{\textit{filepath}\}} will create
+			a slide with one image filling as much space as it can
+		\item Must be compiled twice for correct placement
+	\end{witem}
+\end{frame}
+	% ====================  END FRAME  ==================
+
+
+	% =====================  FRAME  =====================
+	% Full-frame figure, differs by format
+	% Image source: https://www.nga.gov/collection/art-object-page.51141.html
+\pictureframe{\figpath/ratio_ols_lasso_pred.png}
+	% ====================  END FRAME  ==================	
+
+	
+
+	% =====================  FRAME  =====================
+	% Full-frame figure, same for bothh
+	% Image source: https://www.nga.gov/collection/art-object-page.51141.html
+\pictureframe{\figboth/procession_by_a_lake_1969.12.2.jpg}
+	% ====================  END FRAME  ==================	
+
+	
+
+	% =====================  FRAME  =====================
+	% Inline Images, Same for both
+\begin{frame}
+	\frametitle{Diagrams}
+	\begin{columns}[T] % align columns
+    \begin{column}{.58\textwidth}
+    \begin{center}
+    \resizebox{0.9\textwidth}{!}{
+
+	\input{../tikz/euclid.tex}
+	}
+    \end{center}
+    \end{column}
+	\hfill%
+	\begin{column}{.48\textwidth}
+		\begin{witem}
+		\item If you use the theme color names, your tikz diagrams will change with the
+			slide palette
+		\item Overlays work! Add the \texttt{visible on} property to elements of the figure.
+	\end{witem}
+	\end{column}%
+	\end{columns}
+\end{frame}
+	% ====================  END FRAME  ==================
+
+
+
+	% =====================  FRAME  =====================
+	% The end (in the classroom)
+\theendframe
+
+
+
+	% =====================  SECTION  =====================
+	% Section
+\transitionframe{References}
+	% =====================  SECTION  ==================
+
+
+	% =====================  FRAME  =====================
+	% References
+\begin{frame}[allowframebreaks]
+	\frametitle{References}	
+{
+\tiny
+\bibliography{../bibliography.bib}{}
+\bibliographystyle{aer} 					
+}
+
+\bigbreak
+{
+\tiny \color{gray}{Last update: \today{}}
+}		
+	
+\end{frame}
+	% ====================  END FRAME  ==================
+
+
+
+
+
+	% =====================  SECTION  =====================
+	% Non-contents section
+\transitionframe{Hidden Slides}
+	% =====================  SECTION  =====================
+
+
+
+	% =====================  FRAME  =====================
+	% RE more math
+\begin{frame}
+	\frametitle{Variance of $\beta^{RE}$}\label{fr:varRE}
+
+\begin{equation*}
+				\hat{\lambda}_i = 1-\sqrt{\frac{
+					\hat{\sigma}_{{\varepsilon}}^2
+				}{
+					T_i\hat{\sigma}_{{\nu}}^2+\hat{\sigma}_{{\varepsilon}}^2
+				} }\in [0,1]
+			\end{equation*}
+%			\item Estimate the partially demeaned specification
+			\begin{equation*}
+				\left(y_{it} - \hat{\lambda}_i \ddot{y}_{it}\right)
+					= \alpha^{RE}(1-\hat{\lambda}_i)
+					+ \left(X_{it}-\hat{\lambda}_i\ddot{X}_{it}\right)\beta^{RE}
+					+u_{it}
+			\end{equation*}
+	
+%	\href{}{\beamergotobutton{Download the time-series data code}}
+	
+	\hyperlink{fr:RE_discussion}{\beamerreturnbutton{Back}}
+    	
+\end{frame}
+	% ====================  END FRAME  ==================
+
+
+
+
+\end{document}
+
+
+

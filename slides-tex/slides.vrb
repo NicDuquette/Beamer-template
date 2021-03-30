@@ -1,0 +1,65 @@
+\MyStataCode{}
+	hello world
+\end{stataframe}
+
+	% Loop example
+
+%\defverbatim[colored]\ExForval{
+%\begin{statacode}
+%forval i=1(3)7 {
+%
+%    // Print the value of i
+%display "`i'"
+%}
+%\end{statacode}
+%}
+%
+%\begin{frame}[fragile]
+%    \frametitle{Example forval loop}
+%
+%The code
+%    % \onslide<2-> works outside the Verbatim but not inside it
+%    % Cannot tab over within the Verbatim environment!
+%
+%\medbreak{}
+%\ExForval{}
+%
+%will return
+%
+%{\scriptsize
+%\begin{verbatim}
+%1
+%4
+%7
+%\end{verbatim}
+%}
+%
+%
+%\end{frame}
+	% ====================  END FRAME  ==================
+	
+
+
+	% =====================  FRAME  =====================
+	% relaxing error assumptions
+\begin{frame}
+	\frametitle{Relaxing the error structure}
+	\begin{witemplus}
+	\item What happens when errors are correlated across observations?
+	\item We know how to correct SEs for heteroskedasticity and clustering.
+	\item What about estimating $\beta$?
+	\item $\expect[\varepsilon_i \varepsilon_j|\mathbf{X}] = \sigma_i^2$ if $i=j$, $\sigma_{ij}$ if $i \neq j$, and
+	
+		\begin{equation*}
+		\variance[\varepsilon_i|\mathbf{X_{i}}]
+		=\expect[\varepsilon^\prime \varepsilon | \mathbf{X_{i}}]
+		= \boldsymbol{\Omega}
+		= \left[
+		\begin{array}{cccc}
+			\sigma_1^2 		& \sigma_{1,2}	&	\cdots 	& \sigma_{1,m} 		\\
+			\sigma_{1,2}		& \sigma_2^2 	&	\cdots 	& \sigma_{2,m} 		\\
+			\vdots			&				&	\ddots	& \vdots				\\
+			\sigma_{1,m}		& \sigma_{2,m}	&	\cdots 	& \sigma_m^2
+		\end{array} \right]
+		\end{equation*}
+	\end{witemplus}

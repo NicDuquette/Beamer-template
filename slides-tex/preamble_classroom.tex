@@ -1,0 +1,180 @@
+% This preamble defines properties we only want to apply to the in-class, on-a-projector
+% versions of the slides. A sister file, preamble_handout.tex, defines all of these
+% differently for student handouts, which changes the handling of the same macros
+% across slide themes. A third file, preamble_general.tex, defines Latex macros 
+% that are the same for both slide formats.
+
+
+							%%%%%%%%%%%%%%%%%%%%%%%%
+							%  	  DEFINE COLORS    %
+							%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+    % SET BEAMER COLORS
+    % DEFAULT USES WHITE, LIGHT BLUE
+    % TEXT ON BLACK BACKGROUND
+    % http://cloford.com/resources/colours/500col.htm											
+    % Dark == true => use dark theme
+    	\definecolor{lightslateblue}{RGB}{192,192,255}			% Define a blue that stands out against black [old version: 132,112,255]
+    	\setbeamercolor{background canvas}{bg=black}			% background - black
+    	\setbeamercolor{normal text}{fg=white}					% white text
+    	\setbeamercolor{block title}{bg=black,fg=white}			% bg=background, fg= foreground
+    	\setbeamercolor{titlelike}{fg=lightslateblue}			% Slide title color
+    	\setbeamercolor{title}{fg=lightslateblue}				%  Front slideTitle color
+    	\setbeamercolor{enumerate title}{fg=lightslateblue}		%
+    	\setbeamercolor{enumerate item}{fg=lightslateblue}		%
+    	\setbeamercolor{enumerate subitem}{fg=lightslateblue}	%
+    	\setbeamercolor{enumerate subsubitem}{fg=lightslateblue}	%
+    	\setbeamercolor{itemize title}{fg=lightslateblue}		%
+    	\setbeamercolor{itemize item}{fg=lightslateblue}		% Bullet item
+    	\setbeamercolor{itemize subitem}{fg=lightslateblue}		% Bullet sub-item
+    	\setbeamercolor{itemize subsubitem}{fg=lightslateblue}	% Bullet sub-sub-item
+    	\setbeamercolor{section in toc}{fg=lightslateblue}
+	
+	
+%	120 120 255
+    	\definecolor{xblue}{RGB}{100,150,255}
+        \definecolor{xred}{RGB}{255,81,81}
+        \definecolor{xyellow}{RGB}{240,228,66}
+        \definecolor{xgreen}{RGB}{0,250,95}
+        \definecolor{xorange}{RGB}{255, 140, 33}
+        \definecolor{xbrown}{RGB}{144, 67, 19}
+        \definecolor{xpurple}{RGB}{232, 179, 252}
+        
+        
+        
+ 	\definecolor{xmono}{RGB}{255,255,255}	% "mono" is white if background is black,
+	\definecolor{xbg}{RGB}{0,0,0}			% black if it is white; xbg is opposite	
+	\definecolor{xgrey}{RGB}{128,128,128}			% grey											
+		
+     
+							%%%%%%%%%%%%%%%%%%%%%%%%
+							%  DEFINE CODE BLOCKS  %
+							%%%%%%%%%%%%%%%%%%%%%%%%
+
+	% BOOLEAN \codeblockson will be passed from the command line in the final pass and will
+	% trigger the full, syntax-highlighting version of the minted package. When we want to save
+	% time, or when we're tweaking this in a place like TexShop where the --shell-escape
+	% option minted demands is unavailable, we will use draft=true to make things faster
+	% and uncolored.
+\ifdefined\codeblockson
+	\usepackage[final=true]{minted}
+\else
+	\usepackage[draft=true]{minted}
+\fi
+
+\usemintedstyle{mydark}
+
+	% nicolasduquette@Prices-MacBook-Pro ~ % which pygmentize
+	% /Library/Frameworks/Python.framework/Versions/3.8/bin/pygmentize
+	% cd /Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/pygments/styles
+
+	% Create environments {pythoncode}, {statacode}, {latexcode}, {bashcode}
+	% for code blocks on slides
+\newminted{python}{fontsize=\scriptsize, 
+                   gobble=4,
+                   style=mydark
+                   } 
+
+\newminted{latex}{fontsize=\scriptsize, 
+                   gobble=4,
+                   style=mydark
+                   }                    
+
+\newminted{stata}{fontsize=\scriptsize, 
+                   %linenos,
+                   %numbersep=8pt,
+                   gobble=0,
+                   %frame=lines,
+                   style=mydark, %Others: stata, stata-light, stata-dark
+                   framesep=3mm
+                   }  
+                   
+\newminted{bash}{fontsize=\scriptsize, 
+                   %linenos,
+                   %numbersep=8pt,
+                   gobble=0,
+                   %frame=lines,
+                   style=mydark, %Others: stata, stata-light, stata-dark
+                   framesep=3mm
+                   }  
+      
+      % Create simple commands \stata{}, \python{} for inline highlights        
+\newcommand{\stata}[1]{\mintinline{stata}{#1}}
+\newcommand{\python}[1]{\mintinline{python}{#1}}
+\newcommand{\latexinline}[1]{\mintinline{latex}{#1}}
+
+	% Whole-slide code block
+\newcommand{\InsertStataFrame}[2]{\begin{frame}\frametitle{#1} {\footnotesize \inputminted[style=mydark,bgcolor=xbg]{stata}{#2}} \end{frame}}
+\newcommand{\InsertPythonFrame}[2]{\begin{frame}\frametitle{#1} {\footnotesize \inputminted[style=mydark,,bgcolor=xbg]{python}{#2}} \end{frame}}
+
+
+        										
+     
+							%%%%%%%%%%%%%%%%%%%%%%%%%
+							% DEFINE SPECIAL SLIDES %
+							%%%%%%%%%%%%%%%%%%%%%%%%%
+							
+	% Add a transition frame that does not get added to the table of contents
+\newcommand{\transitionframe}[1]{ 
+   {
+    \setbeamercolor{background canvas}{bg=lightslateblue}
+    \begin{frame}
+         \begin{center}
+        { \Huge \textcolor{black}{#1}}
+      \end{center}
+    \end{frame}
+    }
+}
+
+	% Add a section frame and a \section with transitionframe format
+\newcommand{\sectionframe}[1]{
+    \section{#1}
+    {
+    \setbeamercolor{background canvas}{bg=lightslateblue}
+    \begin{frame}
+         \begin{center}
+        { \Huge \textcolor{black}{#1}}
+      \end{center}
+    \end{frame}
+    }
+}
+
+
+	% Add a special section frame for the end
+	% in the classroom but not the handouts
+\newcommand{\theendframe}{
+    {
+    \setbeamercolor{background canvas}{bg=black}
+    \begin{frame}
+         \begin{center}
+        { \Huge \textcolor{white}{End}}
+      \end{center}
+    \end{frame}
+    }
+}
+
+	% Answers to in-class exercises (not provided in handouts)
+\newenvironment{solutionframe}{
+	\begin{frame}
+}{
+	\end{frame}
+}
+\newenvironment{solutionimageframe}{
+	\begin{frame}[plain]
+}{
+	\end{frame}
+}
+     
+							%%%%%%%%%%%%%%%%%%%%%%%%
+							% DEFINE FILE PATHWAYS %
+							%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\figpath}{../figs_dark}				% Path to scheme-optimized images (for in-class projection)
+\newcommand{\figboth}{../figs_both}				% Path to unchanging images
+\newcommand{\tablepath}{../tables_tex}			% Path to tables in Latex format
+
+
+
+
+

@@ -1,0 +1,155 @@
+% This file defines states and macros that are the same for both versions of the slides.
+% Two other preamble documents, preamble_classroom.tex and pramble_handout.tex, define
+% functions that have different properties in the two slide formats.
+
+
+						%%%%%%%%%%%%%%%%%%%%%%%%%%
+						%        REFERENCES      %
+						%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{bibentry}			% Add bibliographic entries anywhere, makes
+								%      "nobibliography" option available
+\usepackage{natbib}			% Use extended BibTeX citation types
+								% REMEMBER to insert the bibliography!
+\bibpunct[, ]{(}{)}{,}{a}{}{,}	% Set inline citation to ({Name} YYYY)
+
+
+
+
+
+						%%%%%%%%%%%%%%%%%%%%%%%%%%
+						%        DIAGRAMS        %
+						%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tikz}				% Use TIKZ to draw figures
+
+	% ENABLE TIKZ OVERLAYS
+	% https://ctan.org/pkg/aobs-tikz
+	% https://tex.stackexchange.com/questions/6135/how-to-make-beamer-overlays-with-tikz-node
+\usetikzlibrary{positioning}
+\usetikzlibrary{overlay-beamer-styles}
+
+\usepackage{pgfplots}
+
+	% https://tex.stackexchange.com/questions/37185/typesetting-a-directed-weighted-graph-with-tikz
+\usetikzlibrary{arrows,positioning,automata}
+
+\usepackage{tikzsymbols}		% fancy symbols
+
+						
+
+						%%%%%%%%%%%%%%%%%%%%%%%%%%
+						%         TABLES         %
+						%%%%%%%%%%%%%%%%%%%%%%%%%%
+						
+\usepackage{booktabs}			% Fancy table macros
+	
+\usepackage{multirow}			% Allow table cells to span rows
+
+\usepackage{array}				% Allow customizable table column styles
+
+
+
+
+						%%%%%%%%%%%%%%%%%%%%%%%%%%
+						%          MATH          %
+						%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsthm}				% Theorem environments
+\usepackage{amssymb}			% Math symbols
+\usepackage{amsmath}			% Basic math
+\usepackage{amsfonts}			% Math fonts
+\usepackage{bbm}				% "Blackboard" math fonts
+\usepackage{mathdots}			% dots in matrices
+\usepackage{units}				% enable \nicefrac
+	
+\newcommand{\mbold}[1]{\boldsymbol{{#1}}}			% Make bold text in math mode nicely
+
+\newcommand{\expect}{\mathbb{E}}						% Expectation
+\newcommand{\variance}{\mathbb{V}}					% Variance
+\newcommand{\covariance}{Cov}						% Covariance
+\newcommand{\prob}{\mathbb{P}}						% Probability
+\newcommand{\indep}{\perp{}}							% Independence
+\newcommand{\cond}{\vert{}}							% Conditional on
+\newcommand{\indicate}[1]{\mathbf{1}\{#1\}}			% Indicator function
+\newcommand{\likely}{\mathcal{L}}					% Likelihood
+\newcommand{\norm}{\mathcal{N}}						% Guassian normal
+
+	% Vertical vector
+\newcommand{\vvec}[1]{\left[\begin{array}{c} #1 \end{array}\right]}
+
+	% fix \ddot
+\renewcommand{\ddot}[1]{\overset{\makebox[0pt]{\mbox{\normalfont\tiny\sffamily ..}}}{#1}}
+
+						%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+						%      CODE ENVIRONMENT      %
+						%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\usepackage{verbatim}			% Insert code blocks
+%
+%\usepackage{fancyvrb}			% verbatim environment that can take very selected commands like colors
+%
+%\usepackage{alltt}				% blocks of fixed-width text
+
+						%%%%%%%%%%%%%%%%%%%%%%%%%%
+						%      FONT OPTIONS      %
+						%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{moresize}					% add ssmall and HUGE
+						
+\usepackage[default]{lato}				% Main text font is Lato
+
+\usepackage{microtype}					% Disable ligatures for the fixed-width font
+\DisableLigatures{encoding = *, family = tt* }
+
+\usepackage[T1]{fontenc}					% Nice handling of accents and some special characters
+
+\usepackage{textcomp}
+\usepackage[varqu,varl]{zi4}				% Use Inconsolata Typewriter for code / monospace
+
+\usepackage[cmintegrals]{newtxsf}		% Nice sans-serif math for equations
+
+
+						%%%%%%%%%%%%%%%%%%%%%%%%%%
+						%     MISCELLANEOUS      %
+						%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	% Disable hyphenation						
+\usepackage[none]{hyphenat}		
+
+	% NO NAVIGATION CONTROLS
+\setbeamertemplate{navigation symbols}{}
+
+
+						%%%%%%%%%%%%%%%%%%%%%%%%%%
+						%     CUSTOM COMMANDS    %
+						%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	% Format parenthetical APA citations nicely
+\newcommand{\citepx}[1]{\begin{scriptsize}{\textcolor[rgb]{0.5,0.5,0.5}{\citep{#1}}}\end{scriptsize}}
+
+	% Paul Goldsmith-Pinkham 's high-space "wide itemize"
+\newenvironment{witem}{\itemize\addtolength{\itemsep}{10pt}}{\enditemize}
+
+	% P-G-P wide itemize with overlays
+\newenvironment{witemplus}{\itemize[<+->]\addtolength{\itemsep}{10pt}}{\enditemize}
+
+	% Whole-page image slide. This uses tikz to resize an image to fill as much of the slide as it
+	% can while centering on the other axis. Because of the kludgy nature of the mechanism, this needs
+	% two passes through latex compiling before the image will be in the right spot. 
+	% Source was stackexchange, I'm pretty sure, but the URL is lost.
+\newcommand{\pictureframe}[1]{	
+\begin{frame}[plain]
+    \begin{tikzpicture}[remember picture,overlay]
+        \node[at=(current page.center)] {
+            \includegraphics[keepaspectratio,
+                             width=\paperwidth,
+                             height=\paperheight]{#1}
+        };
+    \end{tikzpicture}
+\end{frame}
+}
+
+	% Whole-page Stata code block. Need to explain further.
+%\newcommand{\MyStataCode}{No code defined yet!}
+%\newcommand{\MakeStataFrame}[2]{\begin{frame}\frametitle{#1}\MyStataCode{}\end{frame}}
+%
+%

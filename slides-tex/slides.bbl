@@ -1,0 +1,11 @@
+\ifx\undefined\bysame
+\newcommand{\bysame}{\leavevmode\hbox to\leftmargin{\hrulefill\,\,}}
+\fi
+\begin{thebibliography}{xx}
+
+\harvarditem[Duquette]{Duquette}{2016}{DuquetteJMP}
+{\bf Duquette, Nicolas~J.}, ``Do Tax Incentives Affect Charitable
+  Contributions? {E}vidence from Public Charities' Reported Revenues,'' {\it
+  Journal of Public Economics}, May 2016, {\it 137}, 51--69.
+
+\end{thebibliography}
