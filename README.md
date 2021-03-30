@@ -34,3 +34,6 @@ Linux computer.
 5. Explain the color names in more detail up front
 6. Automate things like resizebox
 7. Put in some stuff about whhat this entire contraption is supposed to do
+8. Add [beamer buttons][1]
+
+1: https://www.overleaf.com/learn/latex/Beamer_Presentations:_A_Tutorial_for_Beginners_(Part_3)%E2%80%94Blocks,_Code,_Hyperlinks_and_Buttons
