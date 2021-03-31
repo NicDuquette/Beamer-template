@@ -42,10 +42,10 @@ be read in brighter light or on paper, dark on light is probably better.
 ![](markdown/slides_presentation1.jpg)
 
 
-| Presentation mode | Handout mode |
-| :--: | :--: |
-| ![](markdown/slides_presentation1.jpg) | ![](markdown/slides_handout11.jpg) |
 
+| :--: | :--: |
+| ![](markdown/slides_presentation1.jpg) | ![](markdown/slides_handout1.jpg) |
+| Presentation mode | Handout mode |
 
 
 ### Overlays and solution slides
