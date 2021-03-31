@@ -53,19 +53,14 @@
 }{
 	\end{frame}
 }
-\newenvironment{solutionimageframe}{
-	\begin{frame}<1-| handout:0>[noframenumbering]
-}{
-	\end{frame}
-}
+
      
     
     
     	% File path to handout versions of tables and charts
 \newcommand{\figpath}{../figs_light}				% Path to figures
 \newcommand{\figboth}{../figs_both}				% Path to unchanging images
-\newcommand{\tablepath}{../tables_tex}			% Path to tables generated from Stata
-\newcommand{\croppath}{../floats_snipped}		% Path to images of tables and figs from cited papers
+\newcommand{\tablepath}{../tables_tex}			% Path to tex-formatted tables
     
     
 
@@ -117,21 +112,4 @@
 	% Whole-slide code block
 \newcommand{\InsertStataFrame}[2]{\begin{frame}\frametitle{#1} {\footnotesize \inputminted[style=mylight]{stata}{#2}} \end{frame}}
 \newcommand{\InsertPythonFrame}[2]{\begin{frame}\frametitle{#1} {\footnotesize \inputminted[style=mylight]{python}{#2}} \end{frame}}
-
-
-
-	% TEXT CODE COMMANDS
-	\newcommand{\CMD}[1]{\texttt{\textcolor{xgreen}{#1}}}
-	\newcommand{\VBL}[1]{\texttt{\textcolor{xred}{#1}}}	
-	\newcommand{\CODE}[1]{\texttt{\textcolor{xblue}{#1}}}
-
-
- 
- 	% VERBATIM CODE COMMANDS
-%	% http://scott.sherrillmix.com/blog/programmer/displaying-code-in-latex/
-	\newcommand\Cemph[1]{\textcolor[rgb]{1,0,0}{\textbf{#1}}}		% Emphasis
-	\newcommand\Command[1]{\textcolor{xgreen}{{#1}}}				% Command
-	\newcommand\Var[1]{\textcolor{xred}{{#1}}}				% Variables
-	\newcommand\Comment[1]{\textcolor[rgb]{0.35,0.35,0.35}{{#1}}}				% Comments
-
 
