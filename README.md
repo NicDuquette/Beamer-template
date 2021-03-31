@@ -56,13 +56,21 @@ in the two styles.
 
 
 
-### Overlays and solution slides
+### Slides have layers, handouts don't
 
 
-Overlays
+Overlays are enabled in the classroom slides, but not in the handouts.
 
 
-Solution slides 
+| Overlays | No overlays |
+| :--: | :--: |
+| ![](markdown/slides_presentation1.jpg) | ![](markdown/slides_handout1.jpg) |
+
+
+
+A new environment, `solutionframe`, lets you reveal answers to in-class
+exercises in the classroom version, while hiding them in the handouts.
+
 
 ### Code slides
 
