@@ -43,7 +43,7 @@ be read in brighter light or on paper, dark on light is probably better.
 
 | Presentation mode | Handout mode |
 | :--: | :--: |
-| ![](markdown/slides_presentation1.jpg =250x) | ![](markdown/slides_handout1.jpg =250x) |
+| ![](markdown/slides_presentation1.jpg) | ![](markdown/slides_handout1.jpg) |
 
 
 
