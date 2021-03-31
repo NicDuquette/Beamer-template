@@ -1,7 +1,7 @@
 %!TEX encoding = UTF-8 Unicode
 
 % Hack to generate two versions of the document.
-% Light-on-dark version with overlays for class; 
+% Light-on-dark version with overlays for class;
 % Dark-on-light handout version for possible printing.
 % https://tex.stackexchange.com/questions/1492/passing-parameters-to-a-document
 %\def\ishandout{1}
@@ -10,16 +10,16 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%                            IF IT'S A HANDOOUT, FORMAT THIS WAY                       % 
+%                            IF IT'S A HANDOOUT, FORMAT THIS WAY                       %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifdefined\ishandout
   \documentclass[aspectratio=169,handout]{beamer}
-  
+
 \input{preamble_handout}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%                        BUT IF IT'S FOR THE CLASSROOM, DO THIS                        % 
+%                        BUT IF IT'S FOR THE CLASSROOM, DO THIS                        %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \else
   \documentclass[aspectratio=169]{beamer}
@@ -29,7 +29,7 @@
 \fi
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%                       AND THIS PREAMBLE GETS USED IN EITHER CASE                     % 
+%                       AND THIS PREAMBLE GETS USED IN EITHER CASE                     %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -43,7 +43,7 @@
 \institute{USC Price}
 \date{PPD XXX | Lecture X}
 
-						
+
 
 
 							%%%%%%%%%%%%%%%%%%
@@ -52,7 +52,7 @@
 
 \begin{document}
 
-	
+
 
 	% =====================  FRAME  =====================
 	% Title Slide
@@ -61,7 +61,7 @@
      	\usebeamerfont{title}\Huge\inserttitle\par
 %      \usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par
 \vspace{2em}
-      
+
       \usebeamerfont{author}\Large\insertauthor\par
       \usebeamerfont{institute}\Large\insertinstitute\par
             \bigskip
@@ -70,7 +70,7 @@
     \end{center}
 \end{frame}
 	% ====================  END FRAME  ==================
-	
+
 
 
 	% =====================  FRAME  =====================
@@ -92,7 +92,7 @@
 	% Section
 \sectionframe{Basic Slides Stuff}
 	% =====================  SECTION  ===================
-	
+
 
 	% =====================  FRAME  =====================
 	% Notes go here
@@ -108,15 +108,37 @@
 	% ====================  END FRAME  ==================
 
 
+    % =====================  FRAME  =====================
+	% Notes go here
+\begin{frame}
+	\frametitle{Colors}
+	\begin{witem}
+		\item The classroom version of the slides use a light-on-dark theme,
+			which is kind to eyes
+		\item The handouts use dark-on-white, to avoid wasting ink
+        \item A set of colors names beginning with "x" is defined differently
+            in the two modes, to have appropriate contrast with light or dark
+            backgrounds
+        \item Colors: {\color{xred} xred},
+             {\color{xorange} xorange},
+             {\color{xyellow} xyellow},
+             {\color{xgreen} xgreen},
+             {\color{xblue} xblue},
+             {\color{xpurple} xpurple},
+             {\color{xbrown} xbrown},
+             {\color{xmono} xmono}. ``xbg'' will use the background color.
+	\end{witem}
+\end{frame}
+	% ====================  END FRAME  ==================
+
+
+
 	% =====================  FRAME  =====================
 	% Notes go here
 \begin{frame}
 	\frametitle{Other decisions}
 	\begin{witem}
 		\item Typical Beamer junk, like navigation controls, are omitted
-		\item The classroom version of the slides use a light-on-dark theme, 
-			which is kind to eyes 
-		\item The handouts use dark-on-white, to avoid wasting ink
 		\item Again following Prof.\ Goldsmith-Pinkham, slides are wide-format
 			and use sections
 	\end{witem}
@@ -145,8 +167,8 @@
 \begin{frame}
 	\frametitle{Solution Frames}
 	\begin{witem}
-		\item Sometimes we don't want students to have the answer to 
-			in-class exercises 
+		\item Sometimes we don't want students to have the answer to
+			in-class exercises
 		\item \dots yet we also want them to have the handout to follow along
 		\item Can you guess what the \texttt{solutionframe} environment does?
 	\end{witem}
@@ -190,29 +212,29 @@
 \end{frame}
 	% ====================  END FRAME  ==================
 
-	
+
 
 	% =====================  FRAME  =====================
 	% fonts
 \begin{frame}
 	\frametitle{Math}
 	\begin{witem}
-	\item The general preamble defines a variety of common operators that are tricky to 
+	\item The general preamble defines a variety of common operators that are tricky to
 		code manually, such as \texttt{\textbackslash{}expect} for the expectation operator. For example,
-		
+
 	\item
 	 $\expect[\varepsilon_i \varepsilon_j|\mathbf{X}] = \sigma_i^2$ if $i=j$, $\sigma_{ij}$ if $i \neq j$, and
-	
+
 		\begin{equation*}
-		\variance[\varepsilon_i|\mathbf{X_{i}}] 
-		=\expect[\varepsilon^\prime \varepsilon | \mathbf{X_{i}}] 
+		\variance[\varepsilon_i|\mathbf{X_{i}}]
+		=\expect[\varepsilon^\prime \varepsilon | \mathbf{X_{i}}]
 		= \boldsymbol{\Omega}
 		= \left[
 		\begin{array}{cccc}
 			\sigma_1^2 		& \sigma_{1,2}	&	\cdots 	& \sigma_{1,m} 		\\
 			\sigma_{1,2}		& \sigma_2^2 	&	\cdots 	& \sigma_{2,m} 		\\
 			\vdots			&				&	\ddots	& \vdots				\\
-			\sigma_{1,m}		& \sigma_{2,m}	&	\cdots 	& \sigma_m^2  
+			\sigma_{1,m}		& \sigma_{2,m}	&	\cdots 	& \sigma_m^2
 		\end{array} \right]
 		\end{equation*}
 	\end{witem}
@@ -226,15 +248,15 @@
 %	% Section
 %\sectionframe{Math}
 %	% =====================  SECTION  ===================
-%	
-	
-	
+%
+
+
 
 	% =====================  SECTION  ===================
 	% Section
 \sectionframe{Code}
 	% =====================  SECTION  ===================
-	
+
 
 
 	% =====================  FRAME  =====================
@@ -253,7 +275,7 @@
 	\end{witem}
 \end{frame}
 	% ====================  END FRAME  ==================
-	
+
 	% =====================  FRAME  =====================
 	% Notes go here
 \begin{frame}
@@ -264,22 +286,22 @@
 			\begin{itemize}
 				\item \stata{regress Y X, vce(cluster id)}
 			\end{itemize}
-		\item Or, an entire frame of Stata code can be created from an external file 
+		\item Or, an entire frame of Stata code can be created from an external file
 			using
 			\texttt{\textbackslash{}InsertStataFrame\{}\textit{frametitle}\texttt{\}\{}
 \textit{filepath.do}\texttt{\}}
 	\end{witem}
 \end{frame}
 	% ====================  END FRAME  ==================
-	
-	
-	
+
+
+
 	% =====================  FRAME  =====================
 	% Notes go here
 \InsertStataFrame{A Stata Frame}{../code/hello.do}
 	% =====================  FRAME  =====================
 
-	
+
 	% =====================  FRAME  =====================
 	% Notes go here
 \begin{frame}
@@ -290,23 +312,23 @@
 			\begin{itemize}
 				\item \python{print("Hello World")}
 			\end{itemize}
-		\item Or, an entire frame of Python code can be created from an external file 
+		\item Or, an entire frame of Python code can be created from an external file
 			using
 			\texttt{\textbackslash{}InsertPythonFrame\{}\textit{frametitle}\texttt{\}\{}
 \textit{filepath.py}\texttt{\}}
 	\end{witem}
 \end{frame}
 	% ====================  END FRAME  ==================
-	
-	
+
+
 
 	% =====================  FRAME  =====================
 	% Notes go here
 \InsertPythonFrame{A Python Frame}{../code/example.py}
 	% =====================  FRAME  =====================
-	
-	
-	
+
+
+
 	% =====================  FRAME  =====================
 	% Notes go here
 \begin{frame}
@@ -323,16 +345,16 @@
 	\end{witem}
 \end{frame}
 	% ====================  END FRAME  ==================
-	
-	
+
+
 
 
 	% =====================  SECTION  ===================
 	% Section
 \sectionframe{Tables and Figures}
 	% =====================  SECTION  ===================
-	
-	
+
+
 
 	% =====================  FRAME  =====================
 	% Latex tables
@@ -345,7 +367,7 @@
 	\hfill%
 	\begin{column}{.48\textwidth}
 		\begin{witem}
-		\item Insert .tex tables from statistical software 
+		\item Insert .tex tables from statistical software
 			using \texttt{\textbackslash{}input\{\}}
 		\item \texttt{\textbackslash{}tablepath} defines the relative path to
 			the table directory
@@ -380,15 +402,15 @@
 	\end{columns}
 \end{frame}
 	% ====================  END FRAME  ==================
-	
-	
-	
+
+
+
 	% =====================  FRAME  =====================
 	% Notes go here
 \InsertStataFrame{Example of two colors code here}{../code/define_colors.do}
 	% =====================  FRAME  =====================
 
-	
+
 	% =====================  FRAME  =====================
 	% Inline Images, Same for both
 \begin{frame}
@@ -432,17 +454,17 @@
 	% Full-frame figure, differs by format
 	% Image source: https://www.nga.gov/collection/art-object-page.51141.html
 \pictureframe{\figpath/ratio_ols_lasso_pred.png}
-	% ====================  END FRAME  ==================	
+	% ====================  END FRAME  ==================
 
-	
+
 
 	% =====================  FRAME  =====================
 	% Full-frame figure, same for bothh
 	% Image source: https://www.nga.gov/collection/art-object-page.51141.html
 \pictureframe{\figboth/procession_by_a_lake_1969.12.2.jpg}
-	% ====================  END FRAME  ==================	
+	% ====================  END FRAME  ==================
 
-	
+
 
 	% =====================  FRAME  =====================
 	% Inline Images, Same for both
@@ -486,18 +508,18 @@
 	% =====================  FRAME  =====================
 	% References
 \begin{frame}[allowframebreaks]
-	\frametitle{References}	
+	\frametitle{References}
 {
 \tiny
 \bibliography{../bibliography.bib}{}
-\bibliographystyle{aer} 					
+\bibliographystyle{aer}
 }
 
 \bigbreak
 {
 \tiny \color{gray}{Last update: \today{}}
-}		
-	
+}
+
 \end{frame}
 	% ====================  END FRAME  ==================
 
@@ -531,11 +553,11 @@
 					+ \left(X_{it}-\hat{\lambda}_i\ddot{X}_{it}\right)\beta^{RE}
 					+u_{it}
 			\end{equation*}
-	
+
 %	\href{}{\beamergotobutton{Download the time-series data code}}
-	
+
 	\hyperlink{fr:RE_discussion}{\beamerreturnbutton{Back}}
-    	
+
 \end{frame}
 	% ====================  END FRAME  ==================
 
@@ -543,6 +565,3 @@
 
 
 \end{document}
-
-
-

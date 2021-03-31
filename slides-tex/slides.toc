@@ -1,3 +1,3 @@
 \beamer@sectionintoc {1}{Basic Slides Stuff}{3}{0}{1}
-\beamer@sectionintoc {2}{Code}{10}{0}{2}
-\beamer@sectionintoc {3}{Tables and Figures}{17}{0}{3}
+\beamer@sectionintoc {2}{Code}{11}{0}{2}
+\beamer@sectionintoc {3}{Tables and Figures}{18}{0}{3}

@@ -46,9 +46,23 @@ be read in brighter light or on paper, dark on light is probably better.
 | ![](markdown/slides_presentation1.jpg) | ![](markdown/slides_handout1.jpg) |
 
 
+This includes special color names which will be implemented differently
+in the two styles.
+
+
+| Presentation colors | Handout colors |
+| :--: | :--: |
+| ![](markdown/slides_presentation2.jpg) | ![](markdown/slides_handout2.jpg) |
+
+
 
 ### Overlays and solution slides
 
+
+Overlays
+
+
+Solution slides 
 
 ### Code slides
 
