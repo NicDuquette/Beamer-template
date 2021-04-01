@@ -58,26 +58,35 @@ in the two styles.
 
 ### Slides have layers, handouts don't
 
-
 Overlays are enabled in the classroom slides, but not in the handouts.
-
 
 | Overlays | No overlays |
 | :--: | :--: |
-| ![](markdown/slides_presentation1.jpg) | ![](markdown/slides_handout1.jpg) |
+| ![](markdown/slides_presentation3.jpg) | ![](markdown/slides_handout3.jpg) |
 
-
-
-A new environment, `solutionframe`, lets you reveal answers to in-class
+Similarly, a new environment, `solutionframe`, lets you reveal answers to in-class
 exercises in the classroom version, while hiding them in the handouts.
 
 
 ### Code slides
 
+Code can be added to the slides using an inline command (which inserts it
+	as normal text), or as an entire slide that imports an external `.do` or
+	`.py` file, colors its syntax, and adds a title.
+
+| Python Presentation | Python Handout |
+| :--: | :--: |
+| ![](markdown/slides_presentation3.jpg) | ![](markdown/slides_handout3.jpg) |
+
+Syntax highlighting relies on the minted package, which calls the pygmentize
+Python module.
+
 ## <a name="setup"></a>Using this template
 
 You need to be comfortable going beyond LaTeX for some parts of this template.
 This section explains what you'll need and how to use these extra tools.
+
+
 
 ### What's in this directory?
 + *LaTeX Code*: The `/slides-tex/` folder contains the actual LaTeX used to
@@ -146,14 +155,42 @@ Before you start, you'll need to configure
 3. Add colors to graph workflow
 
 
-### Set your file paths
+### Install Python and pygments
+
+If you don't know which version of Python you want, you should probably use
+[Anaconda](https://www.anaconda.com/products/individual), which is more
+self-contained than other ways of getting Python. If you don't want
+a lot of extra Python packages, you can install
+[Miniconda](https://docs.conda.io/en/latest/miniconda.html)
+instead, which leaves you to install the specific packages you want into a
+minimal Python core.
+
+If you picked a version of Anaconda that didn't come with pygments, you can
+install it in your terminal or shell with the command
+
+```shell
+conda pygments
+```
+
+You can also install pygments using `pip`, but that can get complicated,
+especially if you're using a version of macOS that includes Python 2 for
+system processes; if you're a pip user, I'm going to assume you already know
+how to install packages.
 
 
+### Set your file path(s)
 
 
-### Set up pygments
+You may also want to change the locations of some subdirectories, in
+which case you'll need to change two macro definitions in the preambles,
+which look like this:
 
-
+```latex
+% File path to handout versions of tables and charts
+\newcommand{\figpath}{../figs_light}				% Path to figures
+\newcommand{\figboth}{../figs_both}				% Path to unchanging images
+\newcommand{\tablepath}{../tables_tex}			% Path to tex-formatted tables
+```
 
 ### Configure your image workflow
 
