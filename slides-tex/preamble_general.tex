@@ -53,6 +53,7 @@
 						%%%%%%%%%%%%%%%%%%%%%%%%%%
 						%          MATH          %
 						%%%%%%%%%%%%%%%%%%%%%%%%%%
+						
 \usepackage{amsthm}				% Theorem environments
 \usepackage{amssymb}			% Math symbols
 \usepackage{amsmath}			% Basic math
@@ -118,6 +119,9 @@
 	% NO NAVIGATION CONTROLS
 \setbeamertemplate{navigation symbols}{}
 
+	% Special symbols for new buttons
+\usepackage{fontawesome5}
+
 
 						%%%%%%%%%%%%%%%%%%%%%%%%%%
 						%     CUSTOM COMMANDS    %
@@ -147,4 +151,9 @@
     \end{tikzpicture}
 \end{frame}
 }
+
+	% Special hyperlink buttons
+\newcommand{\beamerdrivebutton}[1]{\beamerbutton{\faGoogleDrive{} #1}}
+\newcommand{\beamergithubbutton}[1]{\beamerbutton{\faGithub{} #1}}
+\newcommand{\beamerwebbutton}[1]{\beamerbutton{\faGlobeAmericas{} #1}}
 

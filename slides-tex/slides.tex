@@ -243,6 +243,30 @@
 
 
 
+	% =====================  FRAME  =====================
+	% buttons
+\begin{frame}\label{fr:buttons}
+	\frametitle{Buttons}
+	\begin{witem}
+		\item One of the best Beamer tricks is to use a 
+			\texttt{\textbackslash{}beamergotobutton} to hyperlink to 
+			a hidden slide with supplementary content, 
+			\hyperlink{fr:hidden}{\beamergotobutton{Like this button}}
+		\item I also use buttons to include hyperlinks to files and resources
+			outside of the slides, using \texttt{\textbackslash{}href} and
+			custom commands
+			\begin{itemize}
+				\item \href{https://drive.google.com/}{\beamerdrivebutton{File on Google Drive}}
+				\item \href{https://github.com/NicDuquette/Beamer-template/blob/main/README.md}{\beamergithubbutton{Code on Github}}
+				\item \href{https://www.thebunnymuseum.com/}{\beamerwebbutton{Link to a generic web site}}
+			\end{itemize}
+
+	\end{witem}
+\end{frame}
+	% ====================  END FRAME  ==================
+
+
+
 %
 %	% =====================  SECTION  ===================
 %	% Section
@@ -536,27 +560,16 @@
 
 	% =====================  FRAME  =====================
 	% RE more math
-\begin{frame}
-	\frametitle{Variance of $\beta^{RE}$}\label{fr:varRE}
+\begin{frame}\label{fr:hidden}
+	\frametitle{You found the hidden slide!}
 
-\begin{equation*}
-				\hat{\lambda}_i = 1-\sqrt{\frac{
-					\hat{\sigma}_{{\varepsilon}}^2
-				}{
-					T_i\hat{\sigma}_{{\nu}}^2+\hat{\sigma}_{{\varepsilon}}^2
-				} }\in [0,1]
-			\end{equation*}
-%			\item Estimate the partially demeaned specification
-			\begin{equation*}
-				\left(y_{it} - \hat{\lambda}_i \ddot{y}_{it}\right)
-					= \alpha^{RE}(1-\hat{\lambda}_i)
-					+ \left(X_{it}-\hat{\lambda}_i\ddot{X}_{it}\right)\beta^{RE}
-					+u_{it}
-			\end{equation*}
+\begin{center}
+\includegraphics[width=0.8\textwidth]{\figboth/secret.jpg}
 
-%	\href{}{\beamergotobutton{Download the time-series data code}}
+\end{center}
 
-	\hyperlink{fr:RE_discussion}{\beamerreturnbutton{Back}}
+\medbreak
+	\hyperlink{fr:buttons}{\beamerreturnbutton{Back}}
 
 \end{frame}
 	% ====================  END FRAME  ==================
