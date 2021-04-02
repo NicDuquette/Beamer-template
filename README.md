@@ -5,7 +5,10 @@ for teaching econometrics (math and coding). It does so using additional
 tools outside of LaTeX to extend what can be done and add useful features.
 
 This requires some additional setup! If you don't want an explanation and
-want to just jump ahead to getting started, see [setup](#setup)
+want to just jump ahead to getting started, see [setup](#setup).
+
+If you want a nice-looking Beamer template that doesn't do all of this extra
+stuff, look at [Paul Goldsmith-Pinkham's](https://github.com/paulgp/beamer-tips).
 
 **WARNING**: This is a preliminary version of a Beamer template.
 It's not done. Not even this
@@ -13,80 +16,31 @@ README is done. It probably has a lot of bugs. If I haven't emailed it to you
 asking for your opinion about something specific, you probably shouldn't
 touch it.
 
-## Why should you use this very complicated way of making slides?
+## What is this for?
 
-Just about any way to make things can be done two ways on a computer: the
-direct way, or the automated way. Writing a document in a word processor is
-direct: what you see is (mostly) what you get, and so creating the text in
-Word means that when you've typed everything up, you're finished. The automated
-way to write a document would mean typing your thoughts up in LaTeX or Markdown
-or some other language that has to be compiled to get the finished product.
-Creating documents from compiled markup is usually a slower way to write a
-first draft, but a much faster system for documents that will be revised over
-and over, because the same code base will automatically update formatting,
-references, tables, figures, and other inputs.
-
-This slide template makes aggressive use of document compilation to create
-two different versions of the same slide deck, one for the classroom,
-one for a student handout. This makes it simple to automatically change
+This template compiles the same LaTeX markup in two different ways. One way
+is designed for projection on a screen while delivering a classroom lecture.
+The second way is designed for student handouts. This makes it very simple
+to automatically change
 the resulting output in ways that are appropriate for the two different
 types of documents.
 
-### Colors
+Some of the differences between the two versions include:
+* Different color schemes are optimized for viewing on a projector vs. a small
+	screen or printout.
+* In the classroom, overlays are used to animate slides. On a handout,
+	they're not.
+* Hidden content, such as solutions to exercises, can be added to the classroom
+	version only
 
-One of the main differences between the classroom and handout versions
-of the slide decks is colors. In a classroom, light on dark is often
-easier to look at, especially on a projector. For a handout, which will
-be read in brighter light or on paper, dark on light is probably better.
+There are also various tricks and custom commands in the template, such as
+highlighted code blocks, fancy image handling, and custom buttons.
 
-
-
-| Presentation mode | Handout mode |
-| :--: | :--: |
-| ![](markdown/slides_presentation1.jpg) | ![](markdown/slides_handout1.jpg) |
-
-
-This includes special color names which will be implemented differently
-in the two styles.
-
-
-| Presentation colors | Handout colors |
-| :--: | :--: |
-| ![](markdown/slides_presentation2.jpg) | ![](markdown/slides_handout2.jpg) |
-
-
-
-### Slides have layers, handouts don't
-
-Overlays are enabled in the classroom slides, but not in the handouts.
-
-| Overlays | No overlays |
-| :--: | :--: |
-| ![](markdown/slides_presentation3.jpg) | ![](markdown/slides_handout3.jpg) |
-
-Similarly, a new environment, `solutionframe`, lets you reveal answers to in-class
-exercises in the classroom version, while hiding them in the handouts.
-
-
-### Code slides
-
-Code can be added to the slides using an inline command (which inserts it
-	as normal text), or as an entire slide that imports an external `.do` or
-	`.py` file, colors its syntax, and adds a title.
-
-| Python Presentation | Python Handout |
-| :--: | :--: |
-| ![](markdown/slides_presentation3.jpg) | ![](markdown/slides_handout3.jpg) |
-
-Syntax highlighting relies on the minted package, which calls the pygmentize
-Python module.
 
 ## <a name="setup"></a>Using this template
 
 You need to be comfortable going beyond LaTeX for some parts of this template.
 This section explains what you'll need and how to use these extra tools.
-
-
 
 ### What's in this directory?
 + *LaTeX Code*: The `/slides-tex/` folder contains the actual LaTeX used to
@@ -178,11 +132,64 @@ system processes; if you're a pip user, I'm going to assume you already know
 how to install packages.
 
 
+### Install the custom Pygments themes
+
+I supply two Pygments themes that match the color scheme used in the
+slides. These are stored in the main directory and called `mylight.py` and
+`mydark.py`. You must copy them to your Pygments styles folder for them
+to work correctly.
+
+First, find your active Pygments installation's `styles/` folder. This can take a little detective work.
+
+If you know which python installation you're using, you can ask it to show you
+where pygments is stored. For example, on my mac that uses Homebrew Python,
+the command `python3` calls the appropriate Python distribution. If I
+ask my terminal
+```shell
+python3 -m pip show pygments
+```
+then the terminal will return
+```
+Name: Pygments
+Version: 2.6.1
+Summary: Pygments is a syntax highlighting package written in Python.
+Home-page: https://pygments.org/
+Author: Georg Brandl
+Author-email: georg@python.org
+License: BSD License
+Location: /Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages
+Requires:
+Required-by: stata-kernel, qtconsole, nbconvert, jupyter-console, ipython
+```
+
+From there, I can navigate to
+`/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/pygments/styles/`
+and copy the custom style files.
+
+If you don't know which version of Python Beamer is using, the terminal command
+```shell
+which pygmentize
+```
+will get you in the general neighborhood; you'll probably have to navigate
+your way up one or two levels of the directory tree until you get to the `lib`
+folder. When you find `styles/`, paste copies of the custom style files.
+
+
 ### Set your file path(s)
 
+To run the shell script that fully compiles both versions of the slides,
+you'll need to edit it. Open `make_slide_decks.sh` and find the first line
+of actual code,
 
-You may also want to change the locations of some subdirectories, in
-which case you'll need to change two macro definitions in the preambles,
+```shell
+maindir="/Users/nicolasduquette/Documents/Beamer-template/"
+```
+
+Change this variable definition to point to wherever you're storing the
+template.
+
+If you move or rename any of the subfolders, you'll need to change two
+LaTeX macro definitions in the preambles,
 which look like this:
 
 ```latex
@@ -198,26 +205,19 @@ If you want to highlight code syntax, you will need to install Python 3
 and Pygments. You will also need to copy the code styles included in
 this template to your Pygments styles folder.
 
+### Making the slide decks
+
+Once you've followed the setup steps above, everything should work. Run
+`make_slide_decks.sh` in your Mac or Linux terminal, and everything ought
+to work correctly.
+
 ### Editing the slides
 
 The Latex code is in the `slides-tex` folder. The main document is called
 `slides.tex`. The other `.tex` files are supporting code.
 
-### Making the slide decks
-
-1. Run the shell script `make_slide_decks.sh` in the Terminal of your Mac or
-Linux computer.
-2. If you are using a Windows machine, install Ubuntu then return to step 1
-
 ## Things on my to-do list
 1. Reduce the need to manually resize things like images
 2. Clean up this readme
 3. Clean up the Latex code more
-4. Create examples of different plot themes in Stata and Python
-5. Explain the color names in more detail up front
-6. Automate things like resizebox
-7. Put in some stuff about whhat this entire contraption is supposed to do
-8. Add [beamer buttons][1]
-9. Automate some of the setup with a script or make file
-
-1: https://www.overleaf.com/learn/latex/Beamer_Presentations:_A_Tutorial_for_Beginners_(Part_3)%E2%80%94Blocks,_Code,_Hyperlinks_and_Buttons
+4. Create more code examples of color tweaks in seaborn
