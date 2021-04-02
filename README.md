@@ -194,16 +194,11 @@ which look like this:
 
 ```latex
 % File path to handout versions of tables and charts
-\newcommand{\figpath}{../figs_light}				% Path to figures
-\newcommand{\figboth}{../figs_both}				% Path to unchanging images
-\newcommand{\tablepath}{../tables_tex}			% Path to tex-formatted tables
+\newcommand{\figpath}{../figs_light}    % Path to figures
+\newcommand{\figboth}{../figs_both}     % Path to unchanging images
+\newcommand{\tablepath}{../tables_tex}  % Path to tex-formatted tables
 ```
 
-### Configure your image workflow
-
-If you want to highlight code syntax, you will need to install Python 3
-and Pygments. You will also need to copy the code styles included in
-this template to your Pygments styles folder.
 
 ### Making the slide decks
 
