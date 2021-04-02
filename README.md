@@ -31,12 +31,8 @@ There are also various tricks and custom commands in the template, such as
 highlighted code blocks, fancy image handling, and custom buttons.
 
 
-## <a name="setup"></a>Using this template
+## What's in this directory?
 
-You need to be comfortable going beyond LaTeX for some parts of this template.
-This section explains what you'll need and how to use these extra tools.
-
-### What's in this directory?
 + *LaTeX Code*: The `/slides-tex/` folder contains the actual LaTeX used to
 	create the slides.
 	- `slides.tex` is the code for the actual slide deck itself. It also calls
@@ -80,7 +76,7 @@ This section explains what you'll need and how to use these extra tools.
 + Image files used in this README are stashed in `/markdown/`; you can
 	ignore those.
 
-### System requirements
+## System requirements
 
 The most recent version of this template was built and tested on a
 computer running macOS 10.15.7, Python 3.8, pdfTeX 3.14159265-2.6-1.40.21 (TeX Live 2020),
@@ -97,13 +93,15 @@ everything in this repository you will need:
 - A fairly recent version of pygments, the code-syntax-higlighting library for
 	Python. Again, you only need this for code-highlighting.
 
+## <a name="setup"></a>Setup Instructions
+
 Before you start, you'll need to configure
-1. Change file paths in the shell script and in the LaTeX preambles
-2. Set up Pygments
-3. Add colors to graph workflow
+1. Install Python and Pygments
+2. Install custom Pygments themes (or choose an alternative)
+3. Change file paths in the shell script
 
 
-### Install Python and pygments
+### Installing Python and pygments
 
 If you don't know which version of Python you want, you should probably use
 [Anaconda](https://www.anaconda.com/products/individual), which is more
@@ -126,7 +124,7 @@ system processes; if you're a pip user, I'm going to assume you already know
 how to install packages.
 
 
-### Install the custom Pygments themes (or don't)
+### Installing the custom Pygments themes (or not installing them)
 
 I supply two Pygments themes that match the color scheme used in the
 slides. These are stored in the main directory and called `mylight.py` and
@@ -227,7 +225,7 @@ call on the custom theme, and uncomment the lines using a built-in theme:
 \newcommand{\InsertPythonFrame}[3][\footnotesize]{\begin{frame}\frametitle{#2} {#1 \inputminted[style=autumn,obeytabs=true,tabsize=4]{python}{#3}} \end{frame}}
 ```
 
-### Set your file path(s)
+### Setting your file path(s)
 
 To run the shell script that fully compiles both versions of the slides,
 you'll need to edit it. Open `make_slide_decks.sh` and find the first line
@@ -251,6 +249,8 @@ which look like this:
 \newcommand{\tablepath}{../tables_tex}  % Path to tex-formatted tables
 ```
 
+
+## Using the template
 
 ### Making the slide decks
 
