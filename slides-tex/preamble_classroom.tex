@@ -73,52 +73,38 @@
 	\usepackage[draft=true]{minted}
 \fi
 
-\usemintedstyle{mydark}
+5\usemintedstyle{mydark}
+%\usemintedstyle{monokai}
 
-	% nicolasduquette@Prices-MacBook-Pro ~ % which pygmentize
-	% /Library/Frameworks/Python.framework/Versions/3.8/bin/pygmentize
-	% cd /Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/pygments/styles
 
-	% Create environments {pythoncode}, {statacode}, {latexcode}, {bashcode}
-	% for code blocks on slides
+	% Define environments for code blocks 
 \newminted{python}{fontsize=\scriptsize,
                    gobble=4,
                    style=mydark
-                   }
-
-\newminted{latex}{fontsize=\scriptsize,
-                   gobble=4,
-                   style=mydark
+%                   style=monokai
                    }
 
 \newminted{stata}{fontsize=\scriptsize,
-                   %linenos,
-                   %numbersep=8pt,
                    gobble=0,
-                   %frame=lines,
-                   style=mydark, %Others: stata, stata-light, stata-dark
-                   framesep=3mm
-                   }
-
-\newminted{bash}{fontsize=\scriptsize,
-                   %linenos,
-                   %numbersep=8pt,
-                   gobble=0,
-                   %frame=lines,
-                   style=mydark, %Others: stata, stata-light, stata-dark
+                   style=mydark,
+%                   style=monokai
                    framesep=3mm
                    }
 
       % Create simple commands \stata{}, \python{} for inline highlights
 \newcommand{\stata}[1]{\mintinline{stata}{#1}}
 \newcommand{\python}[1]{\mintinline{python}{#1}}
-\newcommand{\latexinline}[1]{\mintinline{latex}{#1}}
 
 	% Whole-slide code block
 \newcommand{\InsertStataFrame}[3][\footnotesize]{\begin{frame}\frametitle{#2} {#1 \inputminted[style=mydark,bgcolor=xbg,obeytabs=true,tabsize=4]{stata}{#3}} \end{frame}}
 
 \newcommand{\InsertPythonFrame}[3][\footnotesize]{\begin{frame}\frametitle{#2} {#1 \inputminted[style=mydark,bgcolor=xbg,,obeytabs=true,tabsize=4]{python}{#3}} \end{frame}}
 
+%
+%\newcommand{\InsertStataFrame}[3][\footnotesize]{\begin{frame}\frametitle{#2} {#1 \inputminted[style=monokai,bgcolor=xbg,obeytabs=true,tabsize=4]{stata}{#3}} \end{frame}}
+%
+%\newcommand{\InsertPythonFrame}[3][\footnotesize]{\begin{frame}\frametitle{#2} {#1 \inputminted[style=monokai,bgcolor=xbg,,obeytabs=true,tabsize=4]{python}{#3}} \end{frame}}
+%
 
 
 

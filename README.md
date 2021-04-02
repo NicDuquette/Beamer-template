@@ -132,7 +132,7 @@ system processes; if you're a pip user, I'm going to assume you already know
 how to install packages.
 
 
-### Install the custom Pygments themes
+### Install the custom Pygments themes (or don't)
 
 I supply two Pygments themes that match the color scheme used in the
 slides. These are stored in the main directory and called `mylight.py` and
@@ -174,6 +174,64 @@ will get you in the general neighborhood; you'll probably have to navigate
 your way up one or two levels of the directory tree until you get to the `lib`
 folder. When you find `styles/`, paste copies of the custom style files.
 
+
+**If you don't want to install the custom themes**, but you still want to
+have colorful code, there is a fallback option. The preamble files for the
+classroom and handout formats include alternative commands that use the
+built-in *monokai* and *autumn* themes, respectively. For example,
+
+```latex
+\usemintedstyle{mylight}
+%\usemintedstyle{autumn}
+
+\newminted{python}{fontsize=\scriptsize,
+                   gobble=4,
+                   style=mylight
+%                   style=autumn
+                   }
+\newminted{stata}{fontsize=\scriptsize,
+                   gobble=0,
+                   style=mylight,
+%                   style=autumn,
+                   framesep=3mm
+                   }   
+\newcommand{\stata}[1]{\mintinline{stata}{#1}}
+\newcommand{\python}[1]{\mintinline{python}{#1}}
+
+
+	% Whole-slide code block
+\newcommand{\InsertStataFrame}[3][\footnotesize]{\begin{frame}\frametitle{#2} {#1 \inputminted[style=mylight,obeytabs=true,tabsize=4]{stata}{#3}}  \end{frame}}
+
+\newcommand{\InsertPythonFrame}[3][\footnotesize]{\begin{frame}\frametitle{#2} {#1 \inputminted[style=mylight,obeytabs=true,tabsize=4]{python}{#3}} \end{frame}}
+%
+%\newcommand{\InsertStataFrame}[3][\footnotesize]{\begin{frame}\frametitle{#2} {#1 \inputminted[style=autumn,obeytabs=true,tabsize=4]{stata}{#3}}  \end{frame}}
+%
+%\newcommand{\InsertPythonFrame}[3][\footnotesize]{\begin{frame}\frametitle{#2} {#1 \inputminted[style=autumn,obeytabs=true,tabsize=4]{python}{#3}} \end{frame}}
+```
+
+To switch to the built-in style, comment out or delete the lines of that
+call on the custom theme, and uncomment the lines using a built-in theme:
+
+```latex
+\usemintedstyle{autumn}
+
+\newminted{python}{fontsize=\scriptsize,
+                   gobble=4,
+                   style=autumn
+                   }
+\newminted{stata}{fontsize=\scriptsize,
+                   gobble=0,
+                   style=autumn,
+                   framesep=3mm
+                   }   
+\newcommand{\stata}[1]{\mintinline{stata}{#1}}
+\newcommand{\python}[1]{\mintinline{python}{#1}}
+
+	% Whole-slide code block
+\newcommand{\InsertStataFrame}[3][\footnotesize]{\begin{frame}\frametitle{#2} {#1 \inputminted[style=autumn,obeytabs=true,tabsize=4]{stata}{#3}}  \end{frame}}
+
+\newcommand{\InsertPythonFrame}[3][\footnotesize]{\begin{frame}\frametitle{#2} {#1 \inputminted[style=autumn,obeytabs=true,tabsize=4]{python}{#3}} \end{frame}}
+```
 
 ### Set your file path(s)
 
