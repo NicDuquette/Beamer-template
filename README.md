@@ -73,8 +73,6 @@ highlighted code blocks, fancy image handling, and custom buttons.
 + *Pygments styles*: `mydark.py` and `mylight.py` are also stored in
 	the root directory, and must be copied to the pygments styles folder
 	before you begin.
-+ Image files used in this README are stashed in `/markdown/`; you can
-	ignore those.
 
 ## System requirements
 
