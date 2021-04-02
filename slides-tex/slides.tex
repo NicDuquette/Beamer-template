@@ -265,10 +265,15 @@
 	\frametitle{Slide aesthetics}
 	\begin{witem}
 		\item Beamer clutter, like navigation controls and headers, are deliberately omitted
-		\item These slides use Paul Goldsmith-Pinkham's wide-itemize and 16-9 aspect ratio to space bullet points out
+		\item Many of Paul Goldsmith-Pinkham's ideas are used here too
+			\begin{itemize}
+				\item Wide-itemize environment spaces out bullet points
+				\item 16:9 aspect ratio 
+				\item \texttt{\textbackslash{}sectionframe} adds colorful frames defining sections
+			\end{itemize}
+			
 			\href{https://github.com/paulgp/beamer-tips}{\beamergithubbutton{The Goldsmith-Pinkham Beamer Template}}
-		\item \texttt{\textbackslash{}sectionframe} adds colorful frames defining sections
-		\item \texttt{\textbackslash{}transition frame} the colorful frame, but does not add a section to the table of contents
+		\item \texttt{\textbackslash{}transitionframe} also adds the colorful frame, but does not add a section to the table of contents
 	\end{witem}
 \end{frame}
 	% ====================  END FRAME  ==================
@@ -359,7 +364,7 @@
 	\begin{witem}
 		\item The \texttt{\textbackslash{}Insert\dots{}Frame} commands will take an optional 
 			argument to adjust the text size, e.g.
-			\texttt{\textbackslash{}InsertPythonFrame[\textbackslash{}scriptsize]\{Title\}\{Filepath\}}
+			\texttt{\textbackslash{}InsertPythonFrame[\textbackslash{}scriptsize]\{}\textit{Title}\texttt{\}\{}\textit{Filepath}\texttt{\}}
 		\item You can fit up to 30-ish lines of code on a slide, max, using \texttt{\textbackslash{}tiny} 
 		\item Aim for 20 or fewer lines for readability
 	\end{witem}
@@ -491,7 +496,7 @@
 	\begin{witem}
 		\item Sometimes, you don't want text next to your picture
 		\item You want a big image you can see details of
-		\item \texttt{\textbackslash{}pictureframe\{\textit{filepath}\}} will create
+		\item \texttt{\textbackslash{}pictureframe\{}\textit{filepath}\texttt{\}} will create
 			a slide with one image filling as much space as it can
 		\item Must be compiled twice for correct placement
 	\end{witem}
