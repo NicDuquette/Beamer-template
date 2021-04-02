@@ -13,7 +13,7 @@ do
 	echo $i
 	
 		# Standard compile -> bib -> compile -> compile
-		# Note \PassOptionsToPackage{draft}{graphicx}  won't work because of tikz conflict
+		# \codeblockson{1} boolean will trigger the minted package (not draft mode)
 	pdflatex -shell-escape "\PassOptionsToPackage{draft}{graphicx} \input{${i}.tex}"
 	bibtex $i
 	pdflatex -shell-escape "\PassOptionsToPackage{draft}{graphicx} \input{${i}.tex}"
