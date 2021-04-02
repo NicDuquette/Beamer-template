@@ -10,12 +10,6 @@ want to just jump ahead to getting started, see [setup](#setup).
 If you want a nice-looking Beamer template that doesn't do all of this extra
 stuff, look at [Paul Goldsmith-Pinkham's](https://github.com/paulgp/beamer-tips).
 
-**WARNING**: This is a preliminary version of a Beamer template.
-It's not done. Not even this
-README is done. It probably has a lot of bugs. If I haven't emailed it to you
-asking for your opinion about something specific, you probably shouldn't
-touch it.
-
 ## What is this for?
 
 This template compiles the same LaTeX markup in two different ways. One way
@@ -269,8 +263,8 @@ to work correctly.
 The Latex code is in the `slides-tex` folder. The main document is called
 `slides.tex`. The other `.tex` files are supporting code.
 
-## Things on my to-do list
-1. Reduce the need to manually resize things like images
-2. Clean up this readme
-3. Clean up the Latex code more
-4. Create more code examples of color tweaks in seaborn
+### Further changes
+
+I plan to add further tweaks to this template as I figure out simpler and
+better ways to do things. If you see something that could be better, please
+tell me. `nduquett AT usc DOT edu`
