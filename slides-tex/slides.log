@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.31)  1 APR 2021 18:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.31)  2 APR 2021 10:14
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1689,7 +1689,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmss' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 108
+LaTeX Font Info:    Trying to load font information for U+msa on input line 109
 .
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -1698,7 +1698,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (/usr/local/texlive/2020/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 108
+LaTeX Font Info:    Trying to load font information for U+msb on input line 109
 .
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -1708,19 +1708,19 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Trying to load font information for U+ntxsfmia on input lin
-e 108.
+e 109.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/newtxsf/untxsfmia.fd
 File: untxsfmia.fd 2014/11/16 Fontinst v1.933 font definitions for U/ntxsfmia.
 )
 LaTeX Font Info:    Trying to load font information for U+ntxsym on input line 
-108.
+109.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/newtx/untxsym.fd
 File: untxsym.fd 2015/03/20 Fontinst v1.933 font definitions for U/ntxsym.
 )
 LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line 
-108.
+109.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/newtx/untxsyc.fd
 File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
@@ -1730,7 +1730,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Trying to load font information for OT1+mathkerncmss on inp
-ut line 108.
+ut line 109.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
 File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/ma
@@ -1740,78 +1740,78 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `mathkerncmss' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Trying to load font information for U+fontawesomebrands0 on
- input line 108.
-
-(/usr/local/texlive/2020/texmf-dist/tex/latex/fontawesome5/ufontawesomebrands0.
-fd)
-LaTeX Font Info:    Font shape `U/fontawesomebrands0/solid/n' in size <6> not a
-vailable
-(Font)              Font shape `U/fontawesomebrands0/regular/n' tried instead o
-n input line 108.
  [4
 
 ] [5
 
 ] [6
 
-] [7
-
 ]
-LaTeX Font Info:    Trying to load font information for T1+zi4 on input line 17
-6.
+LaTeX Font Info:    Trying to load font information for T1+zi4 on input line 16
+7.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/inconsolata/t1zi4.fd
 File: t1zi4.fd 2018/01/14 T1/zi4 (Inconsolata)
 )
 LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
-(Font)              scaled to size 10.95pt on input line 176.
+(Font)              scaled to size 10.95pt on input line 167.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `zi4' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [8
+ [7
 
 ]
 LaTeX Font Info:    Font shape `T1/lato-TLF/m/n' will be
-(Font)              scaled to size 10.0pt on input line 213.
+(Font)              scaled to size 10.0pt on input line 204.
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <5.5> not available
-(Font)              size <5> substituted on input line 213.
+(Font)              size <5> substituted on input line 204.
 
 
 LaTeX Font Warning: Font shape `T1/cmss/m/n' in size <5.5> not available
-(Font)              size <5> substituted on input line 213.
+(Font)              size <5> substituted on input line 204.
+
+[8
+
+]
+
+LaTeX Font Warning: Font shape `T1/cmss/b/n' undefined
+(Font)              using `T1/cmss/m/n' instead on input line 233.
+
+LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <10.95> not available
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 233.
+
+LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <8> not available
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 233.
+
+LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <6.1> not available
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 233.
 
 [9
 
 ]
 
-LaTeX Font Warning: Font shape `T1/cmss/b/n' undefined
-(Font)              using `T1/cmss/m/n' instead on input line 242.
-
-LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <10.95> not available
-(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 242.
-
-LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <8> not available
-(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 242.
-
-LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <6.1> not available
-(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 242.
-
-[10
-
-]
-
 LaTeX Font Warning: Font shape `T1/cmss/b/n' in size <5.5> not available
-(Font)              size <5> substituted on input line 266.
+(Font)              size <5> substituted on input line 257.
 
+LaTeX Font Info:    Trying to load font information for U+fontawesomebrands0 on
+ input line 257.
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/fontawesome5/ufontawesomebrands0.
+fd)
+LaTeX Font Info:    Font shape `U/fontawesomebrands0/solid/n' in size <6> not a
+vailable
+(Font)              Font shape `U/fontawesomebrands0/regular/n' tried instead o
+n input line 257.
 LaTeX Font Info:    Trying to load font information for U+fontawesomefree1 on i
-nput line 266.
+nput line 257.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/fontawesome5/ufontawesomefree1.fd
-) [11
+) [10
+
+] [11
 
 ] [12
 
@@ -1920,20 +1920,36 @@ pygtex ../code/example.py)...executed.
 
 ] [19
 
+] [20
+
 ] (../tables_tex/mytable.tex)
-Overfull \hbox (30.44951pt too wide) in paragraph at lines 1--405
+Overfull \hbox (30.44951pt too wide) in paragraph at lines 1--417
 [][] 
  []
 
-[20
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <10.5> not available
+(Font)              size <10.95> substituted on input line 417.
+
+
+LaTeX Font Warning: Font shape `T1/cmss/b/n' in size <10.5> not available
+(Font)              size <10.95> substituted on input line 417.
+
+
+LaTeX Font Warning: Font shape `T1/cmss/m/n' in size <10.5> not available
+(Font)              size <10.95> substituted on input line 417.
+
+LaTeX Font Info:    Font shape `T1/lato-TLF/m/n' will be
+(Font)              scaled to size 10.5pt on input line 417.
+[21
 
 ]
-<../figs_light/se_hetero.png, id=167, 977.6525pt x 781.92125pt>
+<../figs_light/se_hetero.png, id=173, 977.6525pt x 781.92125pt>
 File: ../figs_light/se_hetero.png Graphic file (type png)
 <use ../figs_light/se_hetero.png>
-Package pdftex.def Info: ../figs_light/se_hetero.png  used on input line 429.
+Package pdftex.def Info: ../figs_light/se_hetero.png  used on input line 441.
 (pdftex.def)             Requested size: 191.20082pt x 152.92145pt.
- [21
+ [22
 
  <../figs_light/se_hetero.png>]
 runsystem(pygmentize -l stata -f latex -P commandprefix=PYG -F tokenmerge -o _m
@@ -1989,7 +2005,7 @@ Package textcomp Info: Symbol \textasciigrave not provided by
 Package textcomp Info: Symbol \textasciigrave not provided by
 (textcomp)             font family zi4 in TS1 encoding.
 (textcomp)             Default family used instead on input line 26.
-) [22
+) [23
 
 ]
 runsystem(pygmentize -l stata -f latex -P commandprefix=PYG -F tokenmerge -o _m
@@ -2001,55 +2017,55 @@ ygtex ../code/example_graph.do)...executed.
 C2C.pygtex
 LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
 (Font)              scaled to size 8.0pt on input line 1.
-) [23
+) [24
 
 ]
-<../figs_light/auto.png, id=186, 943.525pt x 530.98375pt>
+<../figs_light/auto.png, id=192, 943.525pt x 530.98375pt>
 File: ../figs_light/auto.png Graphic file (type png)
 <use ../figs_light/auto.png>
-Package pdftex.def Info: ../figs_light/auto.png  used on input line 448.
+Package pdftex.def Info: ../figs_light/auto.png  used on input line 460.
 (pdftex.def)             Requested size: 455.03201pt x 256.0765pt.
- [24
+ [25
 
  <../figs_light/auto.png>]
-<../figs_both/girl_with_the_red_hat_1937.1.53.jpg, id=193, 3252.15pt x 4111.36p
+<../figs_both/girl_with_the_red_hat_1937.1.53.jpg, id=200, 3252.15pt x 4111.36p
 t>
 File: ../figs_both/girl_with_the_red_hat_1937.1.53.jpg Graphic file (type jpg)
 <use ../figs_both/girl_with_the_red_hat_1937.1.53.jpg>
 Package pdftex.def Info: ../figs_both/girl_with_the_red_hat_1937.1.53.jpg  used
- on input line 470.
+ on input line 482.
 (pdftex.def)             Requested size: 172.07956pt x 217.49954pt.
- [25
+ [26
 
  <../figs_both/girl_with_the_red_hat_1937.1.53.jpg>]
 
 LaTeX Font Warning: Font shape `T1/zi4/m/it' undefined
-(Font)              using `T1/zi4/m/n' instead on input line 486.
+(Font)              using `T1/zi4/m/n' instead on input line 498.
 
-[26
+[27
 
 ]
-<../figs_light/ratio_ols_lasso_pred.png, id=205, 927.465pt x 521.95pt>
+<../figs_light/ratio_ols_lasso_pred.png, id=211, 927.465pt x 521.95pt>
 File: ../figs_light/ratio_ols_lasso_pred.png Graphic file (type png)
 <use ../figs_light/ratio_ols_lasso_pred.png>
 Package pdftex.def Info: ../figs_light/ratio_ols_lasso_pred.png  used on input 
-line 493.
+line 505.
 (pdftex.def)             Requested size: 455.02791pt x 256.07631pt.
- [27
+ [28
 
  <../figs_light/ratio_ols_lasso_pred.png>]
-<../figs_both/procession_by_a_lake_1969.12.2.jpg, id=212, 3226.0525pt x 2183.15
+<../figs_both/procession_by_a_lake_1969.12.2.jpg, id=218, 3226.0525pt x 2183.15
 625pt>
 File: ../figs_both/procession_by_a_lake_1969.12.2.jpg Graphic file (type jpg)
 <use ../figs_both/procession_by_a_lake_1969.12.2.jpg>
 Package pdftex.def Info: ../figs_both/procession_by_a_lake_1969.12.2.jpg  used 
-on input line 501.
+on input line 513.
 (pdftex.def)             Requested size: 378.39668pt x 256.07118pt.
- [28
+ [29
 
- <../figs_both/procession_by_a_lake_1969.12.2.jpg>] (../tikz/euclid.tex) [29
+ <../figs_both/procession_by_a_lake_1969.12.2.jpg>] (../tikz/euclid.tex) [30
 
-] [30
+] [31
 
 ] (./slides.bbl
 
@@ -2060,19 +2076,19 @@ LaTeX Font Info:    Font shape `T1/lato-TLF/b/n' will be
 (Font)              scaled to size 6.0pt on input line 7.
 LaTeX Font Info:    Font shape `T1/lato-TLF/m/it' will be
 (Font)              scaled to size 6.0pt on input line 8.
-) [31
+) [32
 
-] [32
+] [33
 
 ]
-<../figs_both/secret.jpg, id=240, 485.815pt x 270.00874pt>
-File: ../figs_both/secret.jpg Graphic file (type jpg)
-<use ../figs_both/secret.jpg>
-Package pdftex.def Info: ../figs_both/secret.jpg  used on input line 587.
-(pdftex.def)             Requested size: 318.67209pt x 177.11038pt.
- [33
+<../figs_both/secret.png, id=246, 678.535pt x 429.605pt>
+File: ../figs_both/secret.png Graphic file (type png)
+<use ../figs_both/secret.png>
+Package pdftex.def Info: ../figs_both/secret.png  used on input line 600.
+(pdftex.def)             Requested size: 298.75394pt x 189.15132pt.
+ [34
 
- <../figs_both/secret.jpg>]
+ <../figs_both/secret.png>]
 \tf@nav=\write8
 \openout8 = `slides.nav'.
 
@@ -2096,11 +2112,11 @@ runsystem(rm slides.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 46005 strings out of 479014
- 1043711 string characters out of 5859148
- 1517082 words of memory out of 5000000
- 62344 multiletter control sequences out of 15000+600000
- 703622 words of font info for 217 fonts, out of 8000000 for 9000
+ 46103 strings out of 479014
+ 1045683 string characters out of 5859148
+ 1517231 words of memory out of 5000000
+ 62428 multiletter control sequences out of 15000+600000
+ 742033 words of font info for 262 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  135i,12n,135p,774b,1185s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/lato/a_cl4kdn.enc}{/usr/l
@@ -2108,8 +2124,8 @@ ocal/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/lo
 cal/texlive/2020/texmf-dist/fonts/enc/dvips/inconsolata/i4-ts1.enc}{/usr/local/
 texlive/2020/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-5.enc}{/usr/local/tex
 live/2020/texmf-dist/fonts/enc/dvips/fontawesome5/fa5free1.enc}{/usr/local/texl
-ive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/local/texliv
-e/2020/texmf-dist/fonts/enc/dvips/fontawesome5/fa5brands0.enc}</usr/local/texli
+ive/2020/texmf-dist/fonts/enc/dvips/fontawesome5/fa5brands0.enc}{/usr/local/tex
+live/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/local/texli
 ve/2020/texmf-dist/fonts/type1/public/fontawesome5/FontAwesome5Brands-Regular.p
 fb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/fontawesome5/FontAwes
 ome5Free-Solid.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/incon
@@ -2131,10 +2147,10 @@ usr/local/texlive/2020/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/loca
 l/texlive/2020/texmf-dist/fonts/type1/public/newtxsf/zsfmi-reg.pfb></usr/local/
 texlive/2020/texmf-dist/fonts/type1/public/newtxsf/zsfmia-bol.pfb></usr/local/t
 exlive/2020/texmf-dist/fonts/type1/public/newtxsf/zsfmia-reg.pfb>
-Output written on slides.pdf (33 pages, 5958402 bytes).
+Output written on slides.pdf (34 pages, 5856371 bytes).
 PDF statistics:
- 341 PDF objects out of 1000 (max. 8388607)
- 267 compressed objects within 3 object streams
- 74 named destinations out of 1000 (max. 500000)
- 59497 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 347 PDF objects out of 1000 (max. 8388607)
+ 272 compressed objects within 3 object streams
+ 76 named destinations out of 1000 (max. 500000)
+ 79977 words of extra memory for PDF output out of 89155 (max. 10000000)
 

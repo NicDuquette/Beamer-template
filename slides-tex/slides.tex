@@ -41,8 +41,8 @@
 \title{Beamer Template}
 \author{Nic Duquette}
 \institute{USC Price}
-\date{PPD XXX | Lecture X}
-
+%\date{PPD XXX | Lecture X}
+\date{ }
 
 
 
@@ -94,19 +94,23 @@
 	% =====================  SECTION  ===================
 
 
-	% =====================  FRAME  =====================
+
+    % =====================  FRAME  =====================
 	% Notes go here
 \begin{frame}
-	\frametitle{A basic frame}
+	\frametitle{What is this}
 	\begin{witem}
-		\item Most slides are words on a screen
-		\item These slides use Paul Goldsmith-Pinkham's wide-itemize to space the words out.
-			\href{https://github.com/paulgp/beamer-tips}{\beamergithubbutton{The Goldsmith-Pinkham Beamer Template}}
-		\item Try not to squeeze words in
-		\item Too many words are bad
+		\item \LaTeX{} is a system for compiling documents from markup
+		\item That means the same markup can be compiled more than one way
+		\item This template creates two versions of the same slide deck
+		\item One to be projected during a classroom lecture
+		\item And one to give to students as a handout
 	\end{witem}
 \end{frame}
 	% ====================  END FRAME  ==================
+
+
+
 
 
     % =====================  FRAME  =====================
@@ -134,19 +138,6 @@
 
 
 
-	% =====================  FRAME  =====================
-	% Notes go here
-\begin{frame}
-	\frametitle{Other decisions}
-	\begin{witem}
-		\item Typical Beamer junk, like navigation controls, are omitted
-		\item Again following Prof.\ Goldsmith-Pinkham, slides are wide-format
-			and use sections
-	\end{witem}
-\end{frame}
-	% ====================  END FRAME  ==================
-
-
 
 
 	% =====================  FRAME  =====================
@@ -154,10 +145,10 @@
 \begin{frame}
 	\frametitle{Overlays}
 	\begin{witemplus}
-		\item Use overlays to reveal words
-		\item Step
-		\item By step
-		\item Only the final slide will be in the handout version
+		\item Use overlays to reveal stuff in the classroom
+		\item Bit
+		\item By by bit
+		\item Only the final, complete slide will be in the handout version
 	\end{witemplus}
 \end{frame}
 	% ====================  END FRAME  ==================
@@ -166,7 +157,7 @@
 	% =====================  FRAME  =====================
 	% Notes go here
 \begin{frame}
-	\frametitle{Solution Frames}
+	\frametitle{Solution frames}
 	\begin{witem}
 		\item Sometimes we don't want students to have the answer to
 			in-class exercises
@@ -180,12 +171,12 @@
 	% =====================  FRAME  =====================
 	% Notes go here
 \begin{solutionframe}
-	\frametitle{Solution Frames}
+	\frametitle{Solution frames}
 	\begin{witem}
 		\item The \texttt{solutionframe} environment only creates a slide
 			in classroom mode
 		\item Handout mode ignores its contents and keeps going
-		\item Similarly, there is a command, \texttt{\textbackslash{}theendframe} command
+		\item Similarly, there is a command, \texttt{\textbackslash{}theendframe},
 			that makes an empty slide at the end of class, but not the handout
 	\end{witem}
 \end{solutionframe}
@@ -247,7 +238,7 @@
 	% =====================  FRAME  =====================
 	% buttons
 \begin{frame}\label{fr:buttons}
-	\frametitle{Buttons}
+	\frametitle{More buttons}
 	\begin{witem}
 		\item One of the best Beamer tricks is to use a 
 			\texttt{\textbackslash{}beamergotobutton} to hyperlink to 
@@ -265,15 +256,25 @@
 	\end{witem}
 \end{frame}
 	% ====================  END FRAME  ==================
+	
+	
+	
+	% =====================  FRAME  =====================
+	% Notes go here
+\begin{frame}
+	\frametitle{Slide aesthetics}
+	\begin{witem}
+		\item Beamer clutter, like navigation controls and headers, are deliberately omitted
+		\item These slides use Paul Goldsmith-Pinkham's wide-itemize and 16-9 aspect ratio to space bullet points out
+			\href{https://github.com/paulgp/beamer-tips}{\beamergithubbutton{The Goldsmith-Pinkham Beamer Template}}
+		\item \texttt{\textbackslash{}sectionframe} adds colorful frames defining sections
+		\item \texttt{\textbackslash{}transition frame} the colorful frame, but does not add a section to the table of contents
+	\end{witem}
+\end{frame}
+	% ====================  END FRAME  ==================
 
 
 
-%
-%	% =====================  SECTION  ===================
-%	% Section
-%\sectionframe{Math}
-%	% =====================  SECTION  ===================
-%
 
 
 
@@ -287,7 +288,7 @@
 	% =====================  FRAME  =====================
 	% Notes go here
 \begin{frame}
-	\frametitle{Code}
+	\frametitle{Insert and color bits of code}
 	\begin{witem}
 		\item To use code highlighting with the same color scheme as
 			the rest of the presentation, copy the style files included
@@ -304,7 +305,7 @@
 	% =====================  FRAME  =====================
 	% Notes go here
 \begin{frame}
-	\frametitle{Stata Code}
+	\frametitle{Stata code}
 	\begin{witem}
 		\item Individual fragments of Stata code can be
 			inserted using \texttt{\textbackslash{}stata\{}\textit{code text}\texttt{\}}
@@ -313,8 +314,7 @@
 			\end{itemize}
 		\item Or, an entire frame of Stata code can be created from an external file
 			using
-			\texttt{\textbackslash{}InsertStataFrame\{}\textit{frametitle}\texttt{\}\{}
-\textit{filepath.do}\texttt{\}}
+			\texttt{\textbackslash{}InsertStataFrame\{}\textit{frametitle}\texttt{\}\{}\textit{filepath.do}\texttt{\}}
 	\end{witem}
 \end{frame}
 	% ====================  END FRAME  ==================
@@ -323,14 +323,14 @@
 
 	% =====================  FRAME  =====================
 	% Notes go here
-\InsertStataFrame{A Stata Frame}{\footnotesize}{../code/hello.do}
+\InsertStataFrame{A Stata Frame}{../code/hello.do}
 	% =====================  FRAME  =====================
 
 
 	% =====================  FRAME  =====================
 	% Notes go here
 \begin{frame}
-	\frametitle{Python Code}
+	\frametitle{Python code}
 	\begin{witem}
 		\item Similarly, individual fragments of Python code can be
 			inserted using \texttt{\textbackslash{}python\{}\textit{code text}\texttt{\}}
@@ -339,8 +339,7 @@
 			\end{itemize}
 		\item Or, an entire frame of Python code can be created from an external file
 			using
-			\texttt{\textbackslash{}InsertPythonFrame\{}\textit{frametitle}\texttt{\}\{}
-\textit{filepath.py}\texttt{\}}
+			\texttt{\textbackslash{}InsertPythonFrame\{}\textit{frametitle}\texttt{\}\{}\textit{filepath.py}\texttt{\}}
 	\end{witem}
 \end{frame}
 	% ====================  END FRAME  ==================
@@ -353,21 +352,34 @@
 	% =====================  FRAME  =====================
 
 
+	% =====================  FRAME  =====================
+	% Notes go here
+\begin{frame}
+	\frametitle{Tweak the code slides}
+	\begin{witem}
+		\item The \texttt{\textbackslash{}Insert\dots{}Frame} commands will take an optional 
+			argument to adjust the text size, e.g.
+			\texttt{\textbackslash{}InsertPythonFrame[\textbackslash{}scriptsize]\{Title\}\{Filepath\}}
+		\item You can fit up to 30-ish lines of code on a slide, max, using \texttt{\textbackslash{}tiny} 
+		\item Aim for 20 or fewer lines for readability
+	\end{witem}
+\end{frame}
+	% ====================  END FRAME  ==================
 
 	% =====================  FRAME  =====================
 	% Notes go here
 \begin{frame}
-	\frametitle{More Code}
+	\frametitle{Doing something else}
 	\begin{witem}
 		\item Adding other languages is straightforward
 			\begin{enumerate}
 				\item Define a new minted environment
 					in both preambles for your favorite language
-				\item Copy the macros for Stata or Python and adapt them
+					\href{https://pygments.org/languages/}{\beamerwebbutton{Supported languages}}
+				\item Copy the new command definitions for Stata or Python and adapt them as needed
 			\end{enumerate}
-		\item What about other tweaks? You may get frustrated.
+		\item What about other tweaks to code blocks? You may get frustrated.
 		\item Beamer and verbatim text (like code) often don't get along; expect bugs.
-		\item You can fit up to 30-ish lines of code on a slide, max; more than 20 means small, crowded text
 	\end{witem}
 \end{frame}
 	% ====================  END FRAME  ==================
@@ -385,7 +397,7 @@
 	% =====================  FRAME  =====================
 	% Latex tables
 \begin{frame}
-	\frametitle{Tables}
+	\frametitle{\LaTeX tables}
 	\begin{columns}[T] % align columns
 	\begin{column}{.48\textwidth}
 		\input{\tablepath/mytable.tex}
@@ -409,7 +421,7 @@
 	% =====================  FRAME  =====================
 	% Inline Images, Different by mode
 \begin{frame}
-	\frametitle{Images}
+	\frametitle{Images can change with the slide style}
 	\begin{columns}[T] % align columns
 	\begin{column}{.48\textwidth}
 		% Source
@@ -433,13 +445,13 @@
 
 	% =====================  FRAME  =====================
 	% Notes go here
-\InsertStataFrame{Tell Stata the color profiles}{\tiny}{../code/define_colors.do}
+\InsertStataFrame[\tiny]{Tell Stata the color profiles}{../code/define_colors.do}
 	% =====================  FRAME  =====================
 
 
 	% =====================  FRAME  =====================
 	% Notes go here
-\InsertStataFrame{Use them in a chart}{\scriptsize}{../code/example_graph.do}
+\InsertStataFrame[\scriptsize]{Use them in a chart}{../code/example_graph.do}
 	% =====================  FRAME  =====================
 	
 	% =====================  FRAME  =====================
@@ -451,7 +463,7 @@
 	% =====================  FRAME  =====================
 	% Inline Images, Same for both
 \begin{frame}
-	\frametitle{Images}
+	\frametitle{Images can also be the same}
 	\begin{columns}[T] % align columns
 	\begin{column}{.48\textwidth}
 		% Source
@@ -475,7 +487,7 @@
 	% =====================  FRAME  =====================
 	% Notes go here
 \begin{frame}
-	\frametitle{Big Images}
+	\frametitle{Big images}
 	\begin{witem}
 		\item Sometimes, you don't want text next to your picture
 		\item You want a big image you can see details of
@@ -576,8 +588,9 @@
 \begin{frame}\label{fr:hidden}
 	\frametitle{You found the hidden slide!}
 
+% https://secrettoeverybody.com/
 \begin{center}
-\includegraphics[width=0.8\textwidth]{\figboth/secret.jpg}
+\includegraphics[width=0.75\textwidth]{\figboth/secret.png}
 
 \end{center}
 
