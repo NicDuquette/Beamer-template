@@ -101,6 +101,7 @@
 	\begin{witem}
 		\item Most slides are words on a screen
 		\item These slides use Paul Goldsmith-Pinkham's wide-itemize to space the words out.
+			\href{https://github.com/paulgp/beamer-tips}{\beamergithubbutton{The Goldsmith-Pinkham Beamer Template}}
 		\item Try not to squeeze words in
 		\item Too many words are bad
 	\end{witem}
@@ -322,7 +323,7 @@
 
 	% =====================  FRAME  =====================
 	% Notes go here
-\InsertStataFrame{A Stata Frame}{../code/hello.do}
+\InsertStataFrame{A Stata Frame}{\footnotesize}{../code/hello.do}
 	% =====================  FRAME  =====================
 
 
@@ -366,6 +367,7 @@
 			\end{enumerate}
 		\item What about other tweaks? You may get frustrated.
 		\item Beamer and verbatim text (like code) often don't get along; expect bugs.
+		\item You can fit up to 30-ish lines of code on a slide, max; more than 20 means small, crowded text
 	\end{witem}
 \end{frame}
 	% ====================  END FRAME  ==================
@@ -431,9 +433,20 @@
 
 	% =====================  FRAME  =====================
 	% Notes go here
-\InsertStataFrame{Example of two colors code here}{../code/define_colors.do}
+\InsertStataFrame{Tell Stata the color profiles}{\tiny}{../code/define_colors.do}
 	% =====================  FRAME  =====================
 
+
+	% =====================  FRAME  =====================
+	% Notes go here
+\InsertStataFrame{Use them in a chart}{\scriptsize}{../code/example_graph.do}
+	% =====================  FRAME  =====================
+	
+	% =====================  FRAME  =====================
+	% Full-frame figure, differs by format
+	% Image source: https://www.nga.gov/collection/art-object-page.51141.html
+\pictureframe{\figpath/auto.png}
+	% ====================  END FRAME  ==================	
 
 	% =====================  FRAME  =====================
 	% Inline Images, Same for both

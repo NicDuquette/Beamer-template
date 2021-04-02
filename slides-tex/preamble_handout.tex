@@ -113,6 +113,7 @@
 
 
 	% Whole-slide code block
-\newcommand{\InsertStataFrame}[2]{\begin{frame}\frametitle{#1} {\footnotesize \inputminted[style=mylight]{stata}{#2}} \end{frame}}
-\newcommand{\InsertPythonFrame}[2]{\begin{frame}\frametitle{#1} {\footnotesize \inputminted[style=mylight]{python}{#2}} \end{frame}}
+\newcommand{\InsertStataFrame}[3]{\begin{frame}\frametitle{#1} {#2 \inputminted[style=mylight,obeytabs=true,tabsize=4]{stata}{#3}}  \end{frame}}
+
+\newcommand{\InsertPythonFrame}[2]{\begin{frame}\frametitle{#1} {\footnotesize \inputminted[style=mylight,obeytabs=true,tabsize=4]{python}{#2}} \end{frame}}
 

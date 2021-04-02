@@ -115,8 +115,8 @@
 \newcommand{\latexinline}[1]{\mintinline{latex}{#1}}
 
 	% Whole-slide code block
-\newcommand{\InsertStataFrame}[2]{\begin{frame}\frametitle{#1} {\footnotesize \inputminted[style=mydark,bgcolor=xbg]{stata}{#2}} \end{frame}}
-\newcommand{\InsertPythonFrame}[2]{\begin{frame}\frametitle{#1} {\footnotesize \inputminted[style=mydark,,bgcolor=xbg]{python}{#2}} \end{frame}}
+\newcommand{\InsertStataFrame}[3]{\begin{frame}\frametitle{#1} {#2 \inputminted[style=mydark,bgcolor=xbg,obeytabs=true,tabsize=4]{stata}{#3}} \end{frame}}
+\newcommand{\InsertPythonFrame}[2]{\begin{frame}\frametitle{#1} {\footnotesize \inputminted[style=mydark,bgcolor=xbg,,obeytabs=true,tabsize=4]{python}{#2}} \end{frame}}
 
 
 
