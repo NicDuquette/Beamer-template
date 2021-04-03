@@ -19,8 +19,8 @@ It looks like [this](https://github.com/NicDuquette/Beamer-template/blob/main/Sl
 The second way is designed for student handouts. It looks like
 [this](https://github.com/NicDuquette/Beamer-template/blob/main/Slides%20-%20Handout/slides_handout.pdf).
 
-Compiling the same markdown in two ways makes it very simple
-to automatically change both sets, with results appropriate for the two different
+Compiling the same document in two ways makes it very simple
+to automatically change both versions, with end results appropriate for the two different
 types of slide deck.
 
 Some of the differences between the two versions include:
@@ -90,10 +90,10 @@ everything in this repository you will need:
 	translate the short shell script that automates slide compilation.
 - A fairly recent vintage of Python 3.x. This is only used for code highlighting,
 	so you can reconfigure this to work without Python if you don't want
-	to insert code examples into your slides. There should be no difference
-	between Anaconda and other distributions.
-- A fairly recent version of pygments, the code-syntax-higlighting library for
-	Python. Again, you only need this for code-highlighting.
+	to insert code examples into your slides.
+- A fairly recent version of Pygments, the code-syntax-higlighting library for
+	Python. Again, you only need this for code-highlighting, so if you
+	don't want that, you don't need Pygments.
 
 ## <a name="setup"></a>Setup Instructions
 
@@ -135,8 +135,8 @@ to work correctly.
 
 First, find your active Pygments installation's `styles/` folder. This can take a little detective work.
 
-If you know which python installation you're using, you can ask it to show you
-where pygments is stored. For example, on my mac that uses Homebrew Python,
+If you know which Python installation you're using, you can ask it to show you
+where Pygments is stored. For example, on my mac that uses Homebrew Python,
 the command `python3` calls the appropriate Python distribution. If I
 ask my terminal
 ```shell
@@ -156,7 +156,7 @@ Requires:
 Required-by: stata-kernel, qtconsole, nbconvert, jupyter-console, ipython
 ```
 
-From there, I can navigate to
+Using that location, I can navigate to
 `/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/pygments/styles/`
 and copy the custom style files.
 
