@@ -1,26 +1,93 @@
+% This preamble defines properties we only want to apply to slides given to students
+% as a handout. A sister file, preamble_classroom.tex, defines all of these
+% differently for projection during lecture, which changes the handling of the same macros
+% across slide themes. A third file, preamble_general.tex, defines Latex macros
+% that are the same for both slide formats.
     
     
-    	% File path to handout versions of tables and charts
-\newcommand{\figpath}{../figs_light}				% Path to figures
+
+                           %%%%%%%%%%%%%%%%%%%%%%%%
+                           % DEFINE FILE PATHWAYS %
+                           %%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\figpath}{../figs_light}				% Path to figures optimized for print
 \newcommand{\figboth}{../figs_both}				% Path to unchanging images
 \newcommand{\tablepath}{../tables_tex}			% Path to tex-formatted tables
     
-    
+
+							%%%%%%%%%%%%%%%%%%%%%%%%
+							%  	  DEFINE COLORS    %
+							%%%%%%%%%%%%%%%%%%%%%%%%    
 
 
-  	% Define colors
-	\definecolor{xblue}{RGB}{0,114,178}			% #0072B2
-	\definecolor{xdarkblue}{RGB}{0,82,146}		% #005292
-    \definecolor{xred}{RGB}{255,30,30}			% #FF1E1E
-    \definecolor{xyellow}{RGB}{240,228,66}
-    \definecolor{xgreen}{RGB}{0,158,85}			% #009E55
-    \definecolor{xorange}{RGB}{213, 111, 62}		% #D56F3E
-    \definecolor{xbrown}{RGB}{76, 35, 10}    
-    \definecolor{xpurple}{RGB}{163, 82, 143}		% #A3528F
-    
-    
- 	\definecolor{xmono}{RGB}{0,0,0}		% "mono" is white if background is black,
-	\definecolor{xbg}{RGB}{255,255,255}	% black if it is white; xbg is opposite
+	% Define special x-colors that can be used for consistent appearance
+	% within themes
+\definecolor{xblue}{RGB}{0,114,178}			% #0072B2
+\definecolor{xdarkblue}{RGB}{0,82,146}		% #005292
+\definecolor{xred}{RGB}{255,30,30}			% #FF1E1E
+\definecolor{xyellow}{RGB}{240,228,66}
+\definecolor{xgreen}{RGB}{0,158,85}			% #009E55
+\definecolor{xorange}{RGB}{213, 111, 62}		% #D56F3E
+\definecolor{xbrown}{RGB}{76, 35, 10}    
+\definecolor{xpurple}{RGB}{163, 82, 143}		% #A3528F
+
+
+\definecolor{xmono}{RGB}{0,0,0}		% "mono" is white if background is black,
+\definecolor{xbg}{RGB}{255,255,255}	% black if it is white; xbg is opposite
+
+
+
+
+     
+							%%%%%%%%%%%%%%%%%%%%%%%%
+							%  DEFINE CODE BLOCKS  %
+							%%%%%%%%%%%%%%%%%%%%%%%%
+
+	% BOOLEAN \codeblockson will be passed from the command line in the final pass and will
+	% trigger the full, syntax-highlighting version of the minted package. When we want to save
+	% time, or when we're tweaking this in a place like TexShop where the --shell-escape
+	% option minted demands is unavailable, we will use draft=true to make things faster
+	% and uncolored.
+\ifdefined\codeblockson
+	\usepackage[final=true]{minted}
+\else
+	\usepackage[draft=true]{minted}
+\fi
+
+\usemintedstyle{mylight}
+%\usemintedstyle{autumn}
+
+\newminted{python}{fontsize=\scriptsize, 
+                   gobble=4,
+                   style=mylight
+%                   style=autumn
+                   } 
+\newminted{stata}{fontsize=\scriptsize, 
+                   gobble=0,
+                   style=mylight, 
+%                   style=autumn, 
+                   framesep=3mm
+                   }   
+\newcommand{\stata}[1]{\mintinline{stata}{#1}}
+\newcommand{\python}[1]{\mintinline{python}{#1}}
+
+
+	% Whole-slide code block
+\newcommand{\InsertStataFrame}[3][\footnotesize]{\begin{frame}\frametitle{#2} {#1 \inputminted[style=mylight,obeytabs=true,tabsize=4]{stata}{#3}}  \end{frame}}
+
+\newcommand{\InsertPythonFrame}[3][\footnotesize]{\begin{frame}\frametitle{#2} {#1 \inputminted[style=mylight,obeytabs=true,tabsize=4]{python}{#3}} \end{frame}}
+%
+%\newcommand{\InsertStataFrame}[3][\footnotesize]{\begin{frame}\frametitle{#2} {#1 \inputminted[style=autumn,obeytabs=true,tabsize=4]{stata}{#3}}  \end{frame}}
+%
+%\newcommand{\InsertPythonFrame}[3][\footnotesize]{\begin{frame}\frametitle{#2} {#1 \inputminted[style=autumn,obeytabs=true,tabsize=4]{python}{#3}} \end{frame}}
+
+
+
+
+
+							%%%%%%%%%%%%%%%%%%%%%%%%%
+							% DEFINE SPECIAL SLIDES %
+							%%%%%%%%%%%%%%%%%%%%%%%%%
  
 
 		% Add a transition frame that does not get added to the TOC
@@ -65,44 +132,4 @@
 }
 
      
-
-
-     
-							%%%%%%%%%%%%%%%%%%%%%%%%
-							%  DEFINE CODE BLOCKS  %
-							%%%%%%%%%%%%%%%%%%%%%%%%
-
-\ifdefined\codeblockson
-	\usepackage[final=true]{minted}
-\else
-	\usepackage[draft=true]{minted}
-\fi
-
-\usemintedstyle{mylight}
-%\usemintedstyle{autumn}
-
-\newminted{python}{fontsize=\scriptsize, 
-                   gobble=4,
-                   style=mylight
-%                   style=autumn
-                   } 
-\newminted{stata}{fontsize=\scriptsize, 
-                   gobble=0,
-                   style=mylight, 
-%                   style=autumn, 
-                   framesep=3mm
-                   }   
-\newcommand{\stata}[1]{\mintinline{stata}{#1}}
-\newcommand{\python}[1]{\mintinline{python}{#1}}
-
-
-	% Whole-slide code block
-\newcommand{\InsertStataFrame}[3][\footnotesize]{\begin{frame}\frametitle{#2} {#1 \inputminted[style=mylight,obeytabs=true,tabsize=4]{stata}{#3}}  \end{frame}}
-
-\newcommand{\InsertPythonFrame}[3][\footnotesize]{\begin{frame}\frametitle{#2} {#1 \inputminted[style=mylight,obeytabs=true,tabsize=4]{python}{#3}} \end{frame}}
-%
-%\newcommand{\InsertStataFrame}[3][\footnotesize]{\begin{frame}\frametitle{#2} {#1 \inputminted[style=autumn,obeytabs=true,tabsize=4]{stata}{#3}}  \end{frame}}
-%
-%\newcommand{\InsertPythonFrame}[3][\footnotesize]{\begin{frame}\frametitle{#2} {#1 \inputminted[style=autumn,obeytabs=true,tabsize=4]{python}{#3}} \end{frame}}
-
 

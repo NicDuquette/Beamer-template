@@ -20,12 +20,9 @@
 							%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-    % SET BEAMER COLORS
-    % DEFAULT USES WHITE, LIGHT BLUE
-    % TEXT ON BLACK BACKGROUND
+    % First, create a special blue for dark-theme side elements
     % http://cloford.com/resources/colours/500col.htm
-    % Dark == true => use dark theme
-    	\definecolor{lightslateblue}{RGB}{192,192,255}			% Define a blue that stands out against black [old version: 132,112,255]
+       	\definecolor{lightslateblue}{RGB}{192,192,255}			% Define a blue that stands out against black [old version: 132,112,255]
     	\setbeamercolor{background canvas}{bg=black}			% background - black
     	\setbeamercolor{normal text}{fg=white}					% white text
     	\setbeamercolor{block title}{bg=black,fg=white}			% bg=background, fg= foreground
@@ -42,20 +39,19 @@
     	\setbeamercolor{section in toc}{fg=lightslateblue}
 
 
-%	120 120 255
-    	\definecolor{xblue}{RGB}{100,150,255}
-        \definecolor{xred}{RGB}{255,81,81}
-        \definecolor{xyellow}{RGB}{240,228,66}
-        \definecolor{xgreen}{RGB}{0,250,95}
-        \definecolor{xorange}{RGB}{255, 140, 33}
-        \definecolor{xbrown}{RGB}{144, 67, 19}
-        \definecolor{xpurple}{RGB}{232, 179, 252}
+	% Define special x-colors that can be used for consistent appearance
+	% within themes 
+\definecolor{xblue}{RGB}{100,150,255}
+\definecolor{xred}{RGB}{255,81,81}
+\definecolor{xyellow}{RGB}{240,228,66}
+\definecolor{xgreen}{RGB}{0,250,95}
+\definecolor{xorange}{RGB}{255, 140, 33}
+\definecolor{xbrown}{RGB}{144, 67, 19}
+\definecolor{xpurple}{RGB}{232, 179, 252}
 
-
-
- 	\definecolor{xmono}{RGB}{255,255,255}	% "mono" is white if background is black,
-	\definecolor{xbg}{RGB}{0,0,0}			% black if it is white; xbg is opposite
-	\definecolor{xgrey}{RGB}{128,128,128}			% grey
+\definecolor{xmono}{RGB}{255,255,255}	% "mono" is white if background is black,
+\definecolor{xbg}{RGB}{0,0,0}			% black if it is white; xbg is opposite
+\definecolor{xgrey}{RGB}{128,128,128}			% grey
 
 
 							%%%%%%%%%%%%%%%%%%%%%%%%
