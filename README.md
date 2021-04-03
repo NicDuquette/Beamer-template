@@ -14,10 +14,10 @@ stuff, look at [Paul Goldsmith-Pinkham's](https://github.com/paulgp/beamer-tips)
 
 This template compiles the same LaTeX markup in two different ways. One way
 is designed for projection on a screen while delivering a classroom lecture.
-It looks like [this](Slides - Presentation/slides_presentation.pdf).
+It looks like [this](/Slides - Presentation/slides_presentation.pdf).
 
 The second way is designed for student handouts. It looks like
-[this](Slides - Handout/slides_handout.pdf).
+[this](https://github.com/NicDuquette/Beamer-template/blob/main/Slides%20-%20Handout/slides_handout.pdf).
 
 Compiling the same markdown in two ways makes it very simple
 to automatically change both sets, with results appropriate for the two different
