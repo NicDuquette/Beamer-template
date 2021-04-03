@@ -14,10 +14,14 @@ stuff, look at [Paul Goldsmith-Pinkham's](https://github.com/paulgp/beamer-tips)
 
 This template compiles the same LaTeX markup in two different ways. One way
 is designed for projection on a screen while delivering a classroom lecture.
-The second way is designed for student handouts. This makes it very simple
-to automatically change
-the resulting output in ways that are appropriate for the two different
-types of documents.
+It looks like [this](Slides - Presentation/slides_presentation.pdf).
+
+The second way is designed for student handouts. It looks like
+[this](Slides - Handout/slides_handout.pdf).
+
+Compiling the same markdown in two ways makes it very simple
+to automatically change both sets, with results appropriate for the two different
+types of slide deck.
 
 Some of the differences between the two versions include:
 * Different color schemes are optimized for viewing on a projector vs. a small
