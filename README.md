@@ -117,7 +117,7 @@ If you picked a version of Anaconda that didn't come with pygments, you can
 install it in your terminal or shell with the command
 
 ```shell
-conda pygments
+conda install pygments
 ```
 
 You can also install pygments using `pip`, but that can get complicated,
