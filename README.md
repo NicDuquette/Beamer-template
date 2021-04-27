@@ -82,7 +82,8 @@ highlighted code blocks, fancy image handling, and custom buttons.
 
 The most recent version of this template was built and tested on a
 computer running macOS 10.15.7, Python 3.8, pdfTeX 3.14159265-2.6-1.40.21 (TeX Live 2020),
-and Pygments 2.6.1. You shouldn't need those exact things, but to do
+and Pygments 2.6.1. It has been tested on an M1 Mac as well.
+You shouldn't need those exact things, but to do
 everything in this repository you will need:
 - A pretty-recent LaTeX distribution, probably [TeX Live](https://tug.org/texlive/).
 - A computer that runs Unix-like shell scripts. Any recent Mac or Linux

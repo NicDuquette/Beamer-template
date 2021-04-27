@@ -2,7 +2,7 @@
 
 # CREATE SLIDE DECKS
 
-maindir="/Users/nicolasduquette/Documents/Beamer-template/"
+maindir="/Users/nicolasduquette/Github/Beamer-template/"
 cd "${maindir}/slides-tex"
 
 
